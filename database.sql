@@ -93,3 +93,51 @@ CREATE TABLE StudentMarks(
 
       
 );
+
+
+
+-- attendance table
+
+CREATE TABLE Attendance(
+      
+      studentId VARCHAR(20),
+      courceCode VARCHAR(20),
+      date Date,
+      type VARCHAR(10),
+      status VARCHAR(10),
+      medicalId VARCHAR(20),
+      FOREIGN KEY (studentId) REFERENCES Student(studentId),
+      FOREIGN KEY (medicalId) REFERENCES Medical(medicalId),
+      FOREIGN KEY (courceCode) REFERENCES Cource(courceCode)
+
+      
+);
+
+
+
+-- medical tables
+
+CREATE TABLE Medical(
+      studentId VARCHAR(20),
+      courceCode VARCHAR(20),
+      date Date,
+      description VARCHAR(100),
+      medicalId VARCHAR(20),
+      PRIMARY KEY(medicalId),
+      FOREIGN KEY (studentId) REFERENCES Student(studentId),
+      FOREIGN KEY (courceCode) REFERENCES Cource(courceCode)
+
+      
+);
+
+
+
+-- notice tables
+
+CREATE TABLE Notice(
+     number INT,
+     title VARCHAR(20),
+     date Date,
+     description VARCHAR(100),
+     PRIMARY KEY(number)
+);
