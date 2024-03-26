@@ -22,9 +22,7 @@ CREATE TABLE lecturer(
          email VARCHAR(20),
          gender VARCHAR(10),
          pwd VARCHAR(8),
-         courceCode VARCHAR(20),
          PRIMARY KEY(lecturerId),
-         FOREIGN KEY (courceCode) REFERENCES Cource(courceCode)
          
          );
 
