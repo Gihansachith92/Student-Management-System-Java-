@@ -7,13 +7,13 @@
 
 ## Features
  #### User Authentication: Secure login system for administrators and students.
-  Student Information Management: Capture and maintain student profiles including personal details and academic records.
-  Course Management: Add, update, and delete courses, manage course schedules, and enroll students.
-  Grading System: Record and calculate student grades, generate transcripts and grade reports.
-  Attendance Tracking: Monitor student attendance and generate reports.
-  Administrative Tools: Tools for administrators to manage system configurations, user accounts, and permissions.
+ #### Student Information Management: Capture and maintain student profiles including personal details and academic records.
+ #### Course Management: Add, update, and delete courses, manage course schedules, and enroll students.
+ #### Grading System: Record and calculate student grades, generate transcripts and grade reports.
+ #### Attendance Tracking: Monitor student attendance and generate reports.
+ #### Administrative Tools: Tools for administrators to manage system configurations, user accounts, and permissions.
 
 ## Technologies Used
-  Java: Core programming language for system development.
-  JavaFX: GUI framework for building interactive user interfaces.
-  MySQL: Database management system for storing and managing data
+ #### Java: Core programming language for system development.
+ #### JavaFX: GUI framework for building interactive user interfaces.
+ #### MySQL: Database management system for storing and managing data
