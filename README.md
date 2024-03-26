@@ -6,7 +6,7 @@
   administrators and students, facilitating smooth interaction and management of academic data.
 
 ## Features
- ### User Authentication: Secure login system for administrators and students.
+ #### User Authentication: Secure login system for administrators and students.
   Student Information Management: Capture and maintain student profiles including personal details and academic records.
   Course Management: Add, update, and delete courses, manage course schedules, and enroll students.
   Grading System: Record and calculate student grades, generate transcripts and grade reports.
