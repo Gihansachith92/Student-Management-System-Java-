@@ -78,6 +78,18 @@ CREATE TABLE Cource(
 -- student Marks table
 
 CREATE TABLE StudentMarks(
-      q1 
+      q1 INT,
+      q2 INT,
+      q3 INT,
+      midP INT,
+      midT INT,
+      endP INT,
+      endT INT,
+      assesment INT,
+      studentId VARCHAR(20),
+      courceCode VARCHAR(20),
+      FOREIGN KEY (studentId) REFERENCES Student(studentId),
+      FOREIGN KEY (courceCode) REFERENCES Cource(courceCode)
+
       
 );
