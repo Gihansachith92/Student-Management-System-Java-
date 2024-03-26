@@ -32,9 +32,9 @@ INSERT INTO TechnicalOfficer (tecId, tName, phoneNumber, email, gender, pwd) VAL
 
 
 -- Cource table
-INSERT INTO Course (courceCode, cName, credit, weeek, theory, practical, lecturerId) VALUES
+INSERT INTO Course (courceCode, cName, credit, weeek, theory, Theory, lecturerId) VALUES
 ('ICT01', 'Data Structures and Algorithms', 3, 15, 1, 0, 'LEC001'),
-('ICT02', 'Object Oriented Programming', 2, 15, 1, 0, 'LEC002'),
+('ICT04', 'Object Oriented Programming', 2, 15, 1, 0, 'LEC002'),
 ('ICT03', 'Object Oriented Programming Practicum', 2, 15, 0, 1, 'LEC002'),
 ('ICT04', 'Object Oriented Analysis and Design', 3, 15, 1, 0, 'LEC003'),
 ('ICT05', 'E-Commerce Implementation, Management and Security', 3, 15, 1, 0, 'LEC004'),
@@ -55,28 +55,28 @@ INSERT INTO StudentMarks (q1, q2, q3, midP, midT, endP, endT, assesment, student
 (50, 36, 10, 0, 75, 0, 12, 49, 'TG1010', 'ICT01'),
 
 -- Object Oriented Programming
-(90, 92, 88, 0, 67, 0, 85, 90, 'TG1001', 'ICT02'),
-(85, 88, 82, 0, 67, 0, 82, 88, 'TG1002', 'ICT02'),
-(88, 90, 85, 0, 67, 0, 80, 86, 'TG1003', 'ICT02'),
-(65, 70, 55, 0, 67, 0, 65, 78, 'TG1004', 'ICT02'),
-(60, 65, 55, 0, 67, 0, 74, 45, 'TG1005', 'ICT02'),
-(65, 60, 55, 0, 67, 0, 71, 44, 'TG1006', 'ICT02'),
-(60, 62, 58, 0, 67, 0, 55, 55, 'TG1007', 'ICT02'),
-(35, 30, 25, 0, 67, 0, 43, 45, 'TG1008', 'ICT02'),
-(32, 28, 30, 0, 67, 0, 28, 23, 'TG1009', 'ICT02'),
-(30, 35, 25, 0, 67, 0, 51, 15, 'TG1010', 'ICT02');
+(90, 92, 88, 0, 67, 0, 85, 90, 'TG1001', 'ICT04'),
+(85, 88, 82, 0, 67, 0, 82, 88, 'TG1002', 'ICT04'),
+(88, 90, 85, 0, 67, 0, 80, 86, 'TG1003', 'ICT04'),
+(65, 70, 55, 0, 67, 0, 65, 78, 'TG1004', 'ICT04'),
+(60, 65, 55, 0, 67, 0, 74, 45, 'TG1005', 'ICT04'),
+(65, 60, 55, 0, 67, 0, 71, 44, 'TG1006', 'ICT04'),
+(60, 62, 58, 0, 67, 0, 55, 55, 'TG1007', 'ICT04'),
+(35, 30, 25, 0, 67, 0, 43, 45, 'TG1008', 'ICT04'),
+(32, 28, 30, 0, 67, 0, 28, 23, 'TG1009', 'ICT04'),
+(30, 35, 25, 0, 67, 0, 51, 15, 'TG1010', 'ICT04');
 
 -- Object Oriented Programming Practicum
-(90, 95, 80, 70, 0, 85, 0, 88, 'TG1001', 'ICT03'),
-(85, 88, 75, 67, 0, 65, 0, 85, 'TG1002', 'ICT03'),
-(88, 92, 78, 75, 0, 61, 0, 90, 'TG1003', 'ICT03'),
-(70, 75, 60, 60, 0, 55, 0, 80, 'TG1004', 'ICT03'),
-(65, 70, 58, 50, 0, 66, 0, 78, 'TG1005', 'ICT03'),
-(68, 72, 56, 44, 0, 43, 0, 75, 'TG1006', 'ICT03'),
-(62, 67, 54, 56, 0, 54, 0, 73, 'TG1007', 'ICT03'),
-(45, 50, 35, 41, 0, 33, 0, 20, 'TG1008', 'ICT03'),
-(40, 45, 30, 34, 0, 22, 0, 68, 'TG1009', 'ICT03'),
-(38, 42, 28, 24, 0, 45, 0, 65, 'TG1010', 'ICT03');
+(90, 95, 80, 70, 0, 85, 0, 88, 'TG1001', 'ICT04'),
+(85, 88, 75, 67, 0, 65, 0, 85, 'TG1002', 'ICT04'),
+(88, 92, 78, 75, 0, 61, 0, 90, 'TG1003', 'ICT04'),
+(70, 75, 60, 60, 0, 55, 0, 80, 'TG1004', 'ICT04'),
+(65, 70, 58, 50, 0, 66, 0, 78, 'TG1005', 'ICT04'),
+(68, 72, 56, 44, 0, 43, 0, 75, 'TG1006', 'ICT04'),
+(62, 67, 54, 56, 0, 54, 0, 73, 'TG1007', 'ICT04'),
+(45, 50, 35, 41, 0, 33, 0, 20, 'TG1008', 'ICT04'),
+(40, 45, 30, 34, 0, 22, 0, 68, 'TG1009', 'ICT04'),
+(38, 42, 28, 24, 0, 45, 0, 65, 'TG1010', 'ICT04');
 
 -- Object Oriented Analysis and Design
 (90, 95, 80, 0, 67, 0, 82, 88, 'TG1001', 'ICT04'),
@@ -116,4 +116,777 @@ INSERT INTO StudentMarks (q1, q2, q3, midP, midT, endP, endT, assesment, student
 
 
 
+INSERT INTO Attendance (studentId, courseCode, date, type, status)
+VALUES 
+
+    
+    -- Monday /////////////////////////////////////////////////////////////////// Start
+
+    ("TG1001","ICT01","2024-01-01","Theory","Present"),
+    ("TG1001","ICT01","2024-01-08","Theory","Present"),
+    ("TG1001","ICT01","2024-01-15","Theory","Present"),
+    ("TG1001","ICT01","2024-01-22","Theory","Absent"),
+    ("TG1001","ICT01","2024-01-29","Theory","Present"),
+
+    ("TG1001","ICT01","2024-02-05","Theory","Present"),
+    ("TG1001","ICT01","2024-02-12","Theory","Absent"),
+    ("TG1001","ICT01","2024-02-19","Theory","Present"),
+    ("TG1001","ICT01","2024-03-26","Theory","Present"),
+    ("TG1001","ICT01","2024-03-04","Theory","Present"),
+
+    ("TG1001","ICT01","2024-03-11","Theory","Present"),
+    ("TG1001","ICT01","2024-03-18","Theory","Present"),
+    ("TG1001","ICT01","2024-03-25","Theory","Absent"),
+    ("TG1001","ICT01","2024-04-01","Theory","Present"),
+    ("TG1001","ICT01","2024-04-08","Theory","Present"),
+
+ 
+    ("TG1002","ICT01","2024-01-01","Theory","Present"),
+    ("TG1002","ICT01","2024-01-08","Theory","Absent"),
+    ("TG1002","ICT01","2024-01-15","Theory","Present"),
+    ("TG1002","ICT01","2024-01-22","Theory","Present"),
+    ("TG1002","ICT01","2024-01-29","Theory","Present"),
+
+    ("TG1002","ICT01","2024-02-05","Theory","Present"),
+    ("TG1002","ICT01","2024-02-12","Theory","Present"),
+    ("TG1002","ICT01","2024-02-19","Theory","Present"),
+    ("TG1002","ICT01","2024-03-26","Theory","Present"),
+    ("TG1002","ICT01","2024-03-04","Theory","Absent"),
+
+    ("TG1002","ICT01","2024-03-11","Theory","Present"),
+    ("TG1002","ICT01","2024-03-18","Theory","Present"),
+    ("TG1002","ICT01","2024-03-25","Theory","Present"),
+    ("TG1002","ICT01","2024-04-01","Theory","Present"),
+    ("TG1002","ICT01","2024-04-08","Theory","Present"),
+
+   
+    ("TG1003","ICT01","2024-01-01","Theory","Absent"),
+    ("TG1003","ICT01","2024-01-08","Theory","Absent"),
+    ("TG1003","ICT01","2024-01-15","Theory","Absent"),
+    ("TG1003","ICT01","2024-01-22","Theory","Present"),
+    ("TG1003","ICT01","2024-01-29","Theory","Present"),
+
+    ("TG1003","ICT01","2024-02-05","Theory","Present"),
+    ("TG1003","ICT01","2024-02-12","Theory","Present"),
+    ("TG1003","ICT01","2024-02-19","Theory","Present"),
+    ("TG1003","ICT01","2024-03-26","Theory","Present"),
+    ("TG1003","ICT01","2024-03-04","Theory","Present"),
+
+    ("TG1003","ICT01","2024-03-11","Theory","Present"),
+    ("TG1003","ICT01","2024-03-18","Theory","Present"),
+    ("TG1003","ICT01","2024-03-25","Theory","Absent"),
+    ("TG1003","ICT01","2024-04-01","Theory","Present"),
+    ("TG1003","ICT01","2024-04-08","Theory","Present"),
+
+ 
+    ("TG1004","ICT01","2024-01-01","Theory","Present"),
+    ("TG1004","ICT01","2024-01-08","Theory","Present"),
+    ("TG1004","ICT01","2024-01-15","Theory","Present"),
+    ("TG1004","ICT01","2024-01-22","Theory","Absent"),
+    ("TG1004","ICT01","2024-01-29","Theory","Present"),
+
+    ("TG1004","ICT01","2024-02-05","Theory","Present"),
+    ("TG1004","ICT01","2024-02-12","Theory","Present"),
+    ("TG1004","ICT01","2024-02-19","Theory","Absent"),
+    ("TG1004","ICT01","2024-03-26","Theory","Present"),
+    ("TG1004","ICT01","2024-03-04","Theory","Present"),
+
+    ("TG1004","ICT01","2024-03-11","Theory","Present"),
+    ("TG1004","ICT01","2024-03-18","Theory","Present"),
+    ("TG1004","ICT01","2024-03-25","Theory","Absent"),
+    ("TG1004","ICT01","2024-04-01","Theory","Present"),
+    ("TG1004","ICT01","2024-04-08","Theory","Present"),
+
+ 
+    ("TG1005","ICT01","2024-01-01","Theory","Present"),
+    ("TG1005","ICT01","2024-01-08","Theory","Present"),
+    ("TG1005","ICT01","2024-01-15","Theory","Present"),
+    ("TG1005","ICT01","2024-01-22","Theory","Present"),
+    ("TG1005","ICT01","2024-01-29","Theory","Present"),
+
+    ("TG1005","ICT01","2024-02-05","Theory","Absent"),
+    ("TG1005","ICT01","2024-02-12","Theory","Present"),
+    ("TG1005","ICT01","2024-02-19","Theory","Present"),
+    ("TG1005","ICT01","2024-03-26","Theory","Present"),
+    ("TG1005","ICT01","2024-03-04","Theory","Present"),
+
+    ("TG1005","ICT01","2024-03-11","Theory","Present"),
+    ("TG1005","ICT01","2024-03-18","Theory","Present"),
+    ("TG1005","ICT01","2024-03-25","Theory","Present"),
+    ("TG1005","ICT01","2024-04-01","Theory","Present"),
+    ("TG1005","ICT01","2024-04-08","Theory","Present"),
+
+    
+   
+    ("TG1006","ICT01","2024-01-01","Theory","Present"),
+    ("TG1006","ICT01","2024-01-08","Theory","Present"),
+    ("TG1006","ICT01","2024-01-15","Theory","Present"),
+    ("TG1006","ICT01","2024-01-22","Theory","Present"),
+    ("TG1006","ICT01","2024-01-29","Theory","Present"),
+
+    ("TG1006","ICT01","2024-02-05","Theory","Present"),
+    ("TG1006","ICT01","2024-02-12","Theory","Present"),
+    ("TG1006","ICT01","2024-02-19","Theory","Present"),
+    ("TG1006","ICT01","2024-03-26","Theory","Present"),
+    ("TG1006","ICT01","2024-03-04","Theory","Present"),
+
+    ("TG1006","ICT01","2024-03-11","Theory","Present"),
+    ("TG1006","ICT01","2024-03-18","Theory","Present"),
+    ("TG1006","ICT01","2024-03-25","Theory","Absent"),
+    ("TG1006","ICT01","2024-04-01","Theory","Present"),
+    ("TG1006","ICT01","2024-04-08","Theory","Present"),
+
+ 
+    ("TG1007","ICT01","2024-01-01","Theory","Present"),
+    ("TG1007","ICT01","2024-01-08","Theory","Present"),
+    ("TG1007","ICT01","2024-01-15","Theory","Present"),
+    ("TG1007","ICT01","2024-01-22","Theory","Present"),
+    ("TG1007","ICT01","2024-01-29","Theory","Present"),
+
+    ("TG1007","ICT01","2024-02-05","Theory","Present"),
+    ("TG1007","ICT01","2024-02-12","Theory","Present"),
+    ("TG1007","ICT01","2024-02-19","Theory","Present"),
+    ("TG1007","ICT01","2024-03-26","Theory","Present"),
+    ("TG1007","ICT01","2024-03-04","Theory","Present"),
+
+    ("TG1007","ICT01","2024-03-11","Theory","Present"),
+    ("TG1007","ICT01","2024-03-18","Theory","Present"),
+    ("TG1007","ICT01","2024-03-25","Theory","Absent"),
+    ("TG1007","ICT01","2024-04-01","Theory","Present"),
+    ("TG1007","ICT01","2024-04-08","Theory","Present"),
+
+
+    ("TG1008","ICT01","2024-01-01","Theory","Present"),
+    ("TG1008","ICT01","2024-01-08","Theory","Present"),
+    ("TG1008","ICT01","2024-01-15","Theory","Present"),
+    ("TG1008","ICT01","2024-01-22","Theory","Present"),
+    ("TG1008","ICT01","2024-01-29","Theory","Present"),
+
+    ("TG1008","ICT01","2024-02-05","Theory","Present"),
+    ("TG1008","ICT01","2024-02-12","Theory","Present"),
+    ("TG1008","ICT01","2024-02-19","Theory","Absent"),
+    ("TG1008","ICT01","2024-03-26","Theory","Present"),
+    ("TG1008","ICT01","2024-03-04","Theory","Present"),
+
+    ("TG1008","ICT01","2024-03-11","Theory","Present"),
+    ("TG1008","ICT01","2024-03-18","Theory","Present"),
+    ("TG1008","ICT01","2024-03-25","Theory","Present"),
+    ("TG1008","ICT01","2024-04-01","Theory","Present"),
+    ("TG1008","ICT01","2024-04-08","Theory","Present"),
+
+  
+    ("TG1009","ICT01","2024-01-01","Theory","Present"),
+    ("TG1009","ICT01","2024-01-08","Theory","Present"),
+    ("TG1009","ICT01","2024-01-15","Theory","Present"),
+    ("TG1009","ICT01","2024-01-22","Theory","Present"),
+    ("TG1009","ICT01","2024-01-29","Theory","Present"),
+
+    ("TG1009","ICT01","2024-02-05","Theory","Present"),
+    ("TG1009","ICT01","2024-02-12","Theory","Present"),
+    ("TG1009","ICT01","2024-02-19","Theory","Present"),
+    ("TG1009","ICT01","2024-03-26","Theory","Present"),
+    ("TG1009","ICT01","2024-03-04","Theory","Present"),
+
+    ("TG1009","ICT01","2024-03-11","Theory","Present"),
+    ("TG1009","ICT01","2024-03-18","Theory","Present"),
+    ("TG1009","ICT01","2024-03-25","Theory","Absent"),
+    ("TG1009","ICT01","2024-04-01","Theory","Present"),
+    ("TG1009","ICT01","2024-04-08","Theory","Present"),
+
+    ("TG1010","ICT01","2024-01-01","Theory","Present"),
+    ("TG1010","ICT01","2024-01-08","Theory","Present"),
+    ("TG1010","ICT01","2024-01-15","Theory","Present"),
+    ("TG1010","ICT01","2024-01-22","Theory","Present"),
+    ("TG1010","ICT01","2024-01-29","Theory","Present"),
+
+    ("TG1010","ICT01","2024-02-05","Theory","Present"),
+    ("TG1010","ICT01","2024-02-12","Theory","Present"),
+    ("TG1010","ICT01","2024-02-19","Theory","Absent"),
+    ("TG1010","ICT01","2024-03-26","Theory","Present"),
+    ("TG1010","ICT01","2024-03-04","Theory","Present"),
+
+    ("TG1010","ICT01","2024-03-11","Theory","Present"),
+    ("TG1010","ICT01","2024-03-18","Theory","Present"),
+    ("TG1010","ICT01","2024-03-25","Theory","Present"),
+    ("TG1010","ICT01","2024-04-01","Theory","Present"),
+    ("TG1010","ICT01","2024-04-08","Theory","Present");
+
+    -- Monday /////////////////////////////////////////////////////////////////// End
+
+
+    -- Tuesday /////////////////////////////////////////////////////////////////// Start
+
+    ("TG1001","ICT04","2024-01-02","Practical","Present"),
+    ("TG1001","ICT04","2024-01-09","Practical","Present"),
+    ("TG1001","ICT04","2024-01-16","Practical","Present"),
+    ("TG1001","ICT04","2024-01-23","Practical","Absent"),
+    ("TG1001","ICT04","2024-01-30","Practical","Present"),
+
+    ("TG1001","ICT04","2024-02-06","Practical","Present"),
+    ("TG1001","ICT04","2024-02-13","Practical","Present"),
+    ("TG1001","ICT04","2024-02-20","Practical","Present"),
+    ("TG1001","ICT04","2024-03-27","Practical","Present"),
+    ("TG1001","ICT04","2024-03-05","Practical","Absent"),
+
+    ("TG1001","ICT04","2024-03-12","Practical","Present"),
+    ("TG1001","ICT04","2024-03-19","Practical","Present"),
+    ("TG1001","ICT04","2024-03-26","Practical","Present"),
+    ("TG1001","ICT04","2024-04-02","Practical","Present"),
+    ("TG1001","ICT04","2024-04-09","Practical","Present"),
+
+ 
+    ("TG1002","ICT04","2024-01-02","Practical","Present"),
+    ("TG1002","ICT04","2024-01-09","Practical","Present"),
+    ("TG1002","ICT04","2024-01-16","Practical","Present"),
+    ("TG1002","ICT04","2024-01-23","Practical","Present"),
+    ("TG1002","ICT04","2024-01-30","Practical","Present"),
+
+    ("TG1002","ICT04","2024-02-06","Practical","Present"),
+    ("TG1002","ICT04","2024-02-13","Practical","Absent"),
+    ("TG1002","ICT04","2024-02-20","Practical","Present"),
+    ("TG1002","ICT04","2024-03-26","Practical","Present"),
+    ("TG1002","ICT04","2024-03-04","Practical","Present"),
+
+    ("TG1002","ICT04","2024-03-11","Practical","Present"),
+    ("TG1002","ICT04","2024-03-18","Practical","Present"),
+    ("TG1002","ICT04","2024-03-26","Practical","Present"),
+    ("TG1002","ICT04","2024-04-02","Practical","Present"),
+    ("TG1002","ICT04","2024-04-09","Practical","Present"),
+
+   
+    ("TG1003","ICT04","2024-01-02","Practical","Present"),
+    ("TG1003","ICT04","2024-01-09","Practical","Absent"),
+    ("TG1003","ICT04","2024-01-16","Practical","Present"),
+    ("TG1003","ICT04","2024-01-23","Practical","Present"),
+    ("TG1003","ICT04","2024-01-30","Practical","Present"),
+
+    ("TG1003","ICT04","2024-02-06","Practical","Present"),
+    ("TG1003","ICT04","2024-02-13","Practical","Present"),
+    ("TG1003","ICT04","2024-02-20","Practical","Present"),
+    ("TG1003","ICT04","2024-03-26","Practical","Present"),
+    ("TG1003","ICT04","2024-03-04","Practical","Present"),
+
+    ("TG1003","ICT04","2024-03-11","Practical","Present"),
+    ("TG1003","ICT04","2024-03-18","Practical","Present"),
+    ("TG1003","ICT04","2024-03-26","Practical","Present"),
+    ("TG1003","ICT04","2024-04-02","Practical","Present"),
+    ("TG1003","ICT04","2024-04-09","Practical","Present"),
+
+ 
+    ("TG1004","ICT04","2024-01-02","Practical","Present"),
+    ("TG1004","ICT04","2024-01-09","Practical","Present"),
+    ("TG1004","ICT04","2024-01-16","Practical","Present"),
+    ("TG1004","ICT04","2024-01-23","Practical","Present"),
+    ("TG1004","ICT04","2024-01-30","Practical","Present"),
+
+    ("TG1004","ICT04","2024-02-06","Practical","Present"),
+    ("TG1004","ICT04","2024-02-13","Practical","Present"),
+    ("TG1004","ICT04","2024-02-20","Practical","Present"),
+    ("TG1004","ICT04","2024-03-26","Practical","Present"),
+    ("TG1004","ICT04","2024-03-04","Practical","Absent"),
+
+    ("TG1004","ICT04","2024-03-11","Practical","Present"),
+    ("TG1004","ICT04","2024-03-18","Practical","Present"),
+    ("TG1004","ICT04","2024-03-26","Practical","Present"),
+    ("TG1004","ICT04","2024-04-02","Practical","Present"),
+    ("TG1004","ICT04","2024-04-09","Practical","Present"),
+
+ 
+    ("TG1005","ICT04","2024-01-02","Practical","Present"),
+    ("TG1005","ICT04","2024-01-09","Practical","Absent"),
+    ("TG1005","ICT04","2024-01-16","Practical","Present"),
+    ("TG1005","ICT04","2024-01-23","Practical","Present"),
+    ("TG1005","ICT04","2024-01-30","Practical","Present"),
+
+    ("TG1005","ICT04","2024-02-06","Practical","Present"),
+    ("TG1005","ICT04","2024-02-13","Practical","Present"),
+    ("TG1005","ICT04","2024-02-20","Practical","Present"),
+    ("TG1005","ICT04","2024-03-26","Practical","Present"),
+    ("TG1005","ICT04","2024-03-04","Practical","Present"),
+
+    ("TG1005","ICT04","2024-03-11","Practical","Present"),
+    ("TG1005","ICT04","2024-03-18","Practical","Absent"),
+    ("TG1005","ICT04","2024-03-26","Practical","Present"),
+    ("TG1005","ICT04","2024-04-02","Practical","Present"),
+    ("TG1005","ICT04","2024-04-09","Practical","Present"),
+
+    
+   
+    ("TG1006","ICT04","2024-01-02","Practical","Absent"),
+    ("TG1006","ICT04","2024-01-09","Practical","Present"),
+    ("TG1006","ICT04","2024-01-16","Practical","Present"),
+    ("TG1006","ICT04","2024-01-23","Practical","Present"),
+    ("TG1006","ICT04","2024-01-30","Practical","Present"),
+
+    ("TG1006","ICT04","2024-02-06","Practical","Present"),
+    ("TG1006","ICT04","2024-02-13","Practical","Present"),
+    ("TG1006","ICT04","2024-02-20","Practical","Present"),
+    ("TG1006","ICT04","2024-03-26","Practical","Present"),
+    ("TG1006","ICT04","2024-03-04","Practical","Present"),
+
+    ("TG1006","ICT04","2024-03-11","Practical","Present"),
+    ("TG1006","ICT04","2024-03-18","Practical","Present"),
+    ("TG1006","ICT04","2024-03-26","Practical","Present"),
+    ("TG1006","ICT04","2024-04-02","Practical","Present"),
+    ("TG1006","ICT04","2024-04-09","Practical","Present"),
+
+ 
+    ("TG1007","ICT04","2024-01-02","Practical","Present"),
+    ("TG1007","ICT04","2024-01-09","Practical","Present"),
+    ("TG1007","ICT04","2024-01-16","Practical","Present"),
+    ("TG1007","ICT04","2024-01-23","Practical","Present"),
+    ("TG1007","ICT04","2024-01-30","Practical","Present"),
+
+    ("TG1007","ICT04","2024-02-06","Practical","Present"),
+    ("TG1007","ICT04","2024-02-13","Practical","Present"),
+    ("TG1007","ICT04","2024-02-20","Practical","Present"),
+    ("TG1007","ICT04","2024-03-26","Practical","Present"),
+    ("TG1007","ICT04","2024-03-04","Practical","Present"),
+
+    ("TG1007","ICT04","2024-03-11","Practical","Present"),
+    ("TG1007","ICT04","2024-03-18","Practical","Present"),
+    ("TG1007","ICT04","2024-03-26","Practical","Present"),
+    ("TG1007","ICT04","2024-04-02","Practical","Present"),
+    ("TG1007","ICT04","2024-04-09","Practical","Present"),
+
+
+    ("TG1008","ICT04","2024-01-02","Practical","Present"),
+    ("TG1008","ICT04","2024-01-09","Practical","Present"),
+    ("TG1008","ICT04","2024-01-16","Practical","Present"),
+    ("TG1008","ICT04","2024-01-23","Practical","Present"),
+    ("TG1008","ICT04","2024-01-30","Practical","Present"),
+
+    ("TG1008","ICT04","2024-02-06","Practical","Present"),
+    ("TG1008","ICT04","2024-02-13","Practical","Present"),
+    ("TG1008","ICT04","2024-02-20","Practical","Present"),
+    ("TG1008","ICT04","2024-03-26","Practical","Present"),
+    ("TG1008","ICT04","2024-03-04","Practical","Absent"),
+
+    ("TG1008","ICT04","2024-03-11","Practical","Present"),
+    ("TG1008","ICT04","2024-03-18","Practical","Present"),
+    ("TG1008","ICT04","2024-03-26","Practical","Present"),
+    ("TG1008","ICT04","2024-04-02","Practical","Present"),
+    ("TG1008","ICT04","2024-04-09","Practical","Present"),
+
+  
+    ("TG1009","ICT04","2024-01-02","Practical","Present"),
+    ("TG1009","ICT04","2024-01-09","Practical","Present"),
+    ("TG1009","ICT04","2024-01-16","Practical","Present"),
+    ("TG1009","ICT04","2024-01-23","Practical","Present"),
+    ("TG1009","ICT04","2024-01-30","Practical","Present"),
+
+    ("TG1009","ICT04","2024-02-06","Practical","Present"),
+    ("TG1009","ICT04","2024-02-13","Practical","Present"),
+    ("TG1009","ICT04","2024-02-20","Practical","Absent"),
+    ("TG1009","ICT04","2024-03-26","Practical","Present"),
+    ("TG1009","ICT04","2024-03-04","Practical","Present"),
+
+    ("TG1009","ICT04","2024-03-11","Practical","Present"),
+    ("TG1009","ICT04","2024-03-18","Practical","Present"),
+    ("TG1009","ICT04","2024-03-26","Practical","Present"),
+    ("TG1009","ICT04","2024-04-02","Practical","Present"),
+    ("TG1009","ICT04","2024-04-09","Practical","Present"),
+
+    ("TG1010","ICT04","2024-01-02","Practical","Absent"),
+    ("TG1010","ICT04","2024-01-09","Practical","Absent"),
+    ("TG1010","ICT04","2024-01-16","Practical","Absent"),
+    ("TG1010","ICT04","2024-01-23","Practical","Absent"),
+    ("TG1010","ICT04","2024-01-30","Practical","Present"),
+
+    ("TG1010","ICT04","2024-02-06","Practical","Absent"),
+    ("TG1010","ICT04","2024-02-13","Practical","Present"),
+    ("TG1010","ICT04","2024-02-20","Practical","Absent"),
+    ("TG1010","ICT04","2024-03-26","Practical","Present"),
+    ("TG1010","ICT04","2024-03-04","Practical","Present"),
+
+    ("TG1010","ICT04","2024-03-11","Practical","Absent"),
+    ("TG1010","ICT04","2024-03-18","Practical","Present"),
+    ("TG1010","ICT04","2024-03-26","Practical","Present"),
+    ("TG1010","ICT04","2024-04-02","Practical","Present"),
+    ("TG1010","ICT04","2024-04-09","Practical","Present"),
+
+
+
+    -- Tuesday /////////////////////////////////////////////////////////////////// End
+
+    --wensday
+    ("TG1001","ICT05","2024-01-03","Theory","Present"),
+    ("TG1001","ICT05","2024-01-10","Theory","Absent"),
+    ("TG1001","ICT05","2024-01-17","Theory","Present"),
+    ("TG1001","ICT05","2024-01-24","Theory","Present"),
+    ("TG1001","ICT05","2024-01-31","Theory","Present"),
+
+    ("TG1001","ICT05","2024-02-07","Theory","Present"),
+    ("TG1001","ICT05","2024-02-14","Theory","Present"),
+    ("TG1001","ICT05","2024-02-21","Theory","Present"),
+    ("TG1001","ICT05","2024-03-28","Theory","Present"),
+    ("TG1001","ICT05","2024-03-06","Theory","Absent"),
+
+    ("TG1001","ICT05","2024-03-13","Theory","Present"),
+    ("TG1001","ICT05","2024-03-20","Theory","Present"),
+    ("TG1001","ICT05","2024-03-27","Theory","Present"),
+    ("TG1001","ICT05","2024-04-03","Theory","Present"),
+    ("TG1001","ICT05","2024-04-10","Theory","Present"),
+
+ 
+    ("TG1002","ICT05","2024-01-03","Theory","Present"),
+    ("TG1002","ICT05","2024-01-10","Theory","Present"),
+    ("TG1002","ICT05","2024-01-17","Theory","Present"),
+    ("TG1002","ICT05","2024-01-24","Theory","Present"),
+    ("TG1002","ICT05","2024-01-31","Theory","Present"),
+
+    ("TG1002","ICT05","2024-02-07","Theory","Present"),
+    ("TG1002","ICT05","2024-02-14","Theory","Absent"),
+    ("TG1002","ICT05","2024-02-21","Theory","Present"),
+    ("TG1002","ICT05","2024-03-27","Theory","Present"),
+    ("TG1002","ICT05","2024-03-05","Theory","Absent"),
+
+    ("TG1002","ICT05","2024-03-12","Theory","Present"),
+    ("TG1002","ICT05","2024-03-19","Theory","Absent"),
+    ("TG1002","ICT05","2024-03-27","Theory","Present"),
+    ("TG1002","ICT05","2024-04-03","Theory","Present"),
+    ("TG1002","ICT05","2024-04-10","Theory","Present"),
+
+   
+    ("TG1003","ICT05","2024-01-03","Theory","Present"),
+    ("TG1003","ICT05","2024-01-10","Theory","Absent"),
+    ("TG1003","ICT05","2024-01-17","Theory","Present"),
+    ("TG1003","ICT05","2024-01-24","Theory","Present"),
+    ("TG1003","ICT05","2024-01-31","Theory","Present"),
+
+    ("TG1003","ICT05","2024-02-07","Theory","Present"),
+    ("TG1003","ICT05","2024-02-14","Theory","Present"),
+    ("TG1003","ICT05","2024-02-21","Theory","Absent"),
+    ("TG1003","ICT05","2024-03-27","Theory","Present"),
+    ("TG1003","ICT05","2024-03-05","Theory","Present"),
+
+    ("TG1003","ICT05","2024-03-12","Theory","Absent"),
+    ("TG1003","ICT05","2024-03-19","Theory","Present"),
+    ("TG1003","ICT05","2024-03-27","Theory","Present"),
+    ("TG1003","ICT05","2024-04-03","Theory","Absent"),
+    ("TG1003","ICT05","2024-04-10","Theory","Present"),
+
+ 
+    ("TG1004","ICT05","2024-01-03","Theory","Absent"),
+    ("TG1004","ICT05","2024-01-10","Theory","Absent"),
+    ("TG1004","ICT05","2024-01-17","Theory","Absent"),
+    ("TG1004","ICT05","2024-01-24","Theory","Present"),
+    ("TG1004","ICT05","2024-01-31","Theory","Present"),
+
+    ("TG1004","ICT05","2024-02-07","Theory","Present"),
+    ("TG1004","ICT05","2024-02-14","Theory","Present"),
+    ("TG1004","ICT05","2024-02-21","Theory","Present"),
+    ("TG1004","ICT05","2024-03-27","Theory","Absent"),
+    ("TG1004","ICT05","2024-03-05","Theory","Present"),
+
+    ("TG1004","ICT05","2024-03-12","Theory","Present"),
+    ("TG1004","ICT05","2024-03-19","Theory","Absent"),
+    ("TG1004","ICT05","2024-03-27","Theory","Present"),
+    ("TG1004","ICT05","2024-04-03","Theory","Present"),
+    ("TG1004","ICT05","2024-04-10","Theory","Present"),
+
+ 
+    ("TG1005","ICT05","2024-01-03","Theory","Present"),
+    ("TG1005","ICT05","2024-01-10","Theory","Absent"),
+    ("TG1005","ICT05","2024-01-17","Theory","Absent"),
+    ("TG1005","ICT05","2024-01-24","Theory","Absent"),
+    ("TG1005","ICT05","2024-01-31","Theory","Absent"),
+
+    ("TG1005","ICT05","2024-02-07","Theory","Present"),
+    ("TG1005","ICT05","2024-02-14","Theory","Present"),
+    ("TG1005","ICT05","2024-02-21","Theory","Present"),
+    ("TG1005","ICT05","2024-03-27","Theory","Present"),
+    ("TG1005","ICT05","2024-03-05","Theory","Present"),
+
+    ("TG1005","ICT05","2024-03-12","Theory","Present"),
+    ("TG1005","ICT05","2024-03-19","Theory","Present"),
+    ("TG1005","ICT05","2024-03-27","Theory","Absent"),
+    ("TG1005","ICT05","2024-04-03","Theory","Present"),
+    ("TG1005","ICT05","2024-04-10","Theory","Present"),
+
+    
+   
+    ("TG1006","ICT05","2024-01-03","Theory","Present"),
+    ("TG1006","ICT05","2024-01-10","Theory","Present"),
+    ("TG1006","ICT05","2024-01-17","Theory","Absent"),
+    ("TG1006","ICT05","2024-01-24","Theory","Present"),
+    ("TG1006","ICT05","2024-01-31","Theory","Present"),
+
+    ("TG1006","ICT05","2024-02-07","Theory","Present"),
+    ("TG1006","ICT05","2024-02-14","Theory","Present"),
+    ("TG1006","ICT05","2024-02-21","Theory","Absent"),
+    ("TG1006","ICT05","2024-03-27","Theory","Present"),
+    ("TG1006","ICT05","2024-03-05","Theory","Present"),
+
+    ("TG1006","ICT05","2024-03-12","Theory","Present"),
+    ("TG1006","ICT05","2024-03-19","Theory","Present"),
+    ("TG1006","ICT05","2024-03-27","Theory","Absent"),
+    ("TG1006","ICT05","2024-04-03","Theory","Present"),
+    ("TG1006","ICT05","2024-04-10","Theory","Present"),
+
+ 
+    ("TG1007","ICT05","2024-01-03","Theory","Absent"),
+    ("TG1007","ICT05","2024-01-10","Theory","Absent"),
+    ("TG1007","ICT05","2024-01-17","Theory","Absent"),
+    ("TG1007","ICT05","2024-01-24","Theory","Present"),
+    ("TG1007","ICT05","2024-01-31","Theory","Absent"),
+
+    ("TG1007","ICT05","2024-02-07","Theory","Present"),
+    ("TG1007","ICT05","2024-02-14","Theory","Present"),
+    ("TG1007","ICT05","2024-02-21","Theory","Present"),
+    ("TG1007","ICT05","2024-03-27","Theory","Absent"),
+    ("TG1007","ICT05","2024-03-05","Theory","Absent"),
+
+    ("TG1007","ICT05","2024-03-12","Theory","Absent"),
+    ("TG1007","ICT05","2024-03-19","Theory","Present"),
+    ("TG1007","ICT05","2024-03-27","Theory","Absent"),
+    ("TG1007","ICT05","2024-04-03","Theory","Present"),
+    ("TG1007","ICT05","2024-04-10","Theory","Absent"),
+
+
+    ("TG1008","ICT05","2024-01-03","Theory","Present"),
+    ("TG1008","ICT05","2024-01-10","Theory","Present"),
+    ("TG1008","ICT05","2024-01-17","Theory","Absent"),
+    ("TG1008","ICT05","2024-01-24","Theory","Present"),
+    ("TG1008","ICT05","2024-01-31","Theory","Present"),
+
+    ("TG1008","ICT05","2024-02-07","Theory","Present"),
+    ("TG1008","ICT05","2024-02-14","Theory","Present"),
+    ("TG1008","ICT05","2024-02-21","Theory","Absent"),
+    ("TG1008","ICT05","2024-03-27","Theory","Present"),
+    ("TG1008","ICT05","2024-03-05","Theory","Present"),
+
+    ("TG1008","ICT05","2024-03-12","Theory","Present"),
+    ("TG1008","ICT05","2024-03-19","Theory","Present"),
+    ("TG1008","ICT05","2024-03-27","Theory","Absent"),
+    ("TG1008","ICT05","2024-04-03","Theory","Present"),
+    ("TG1008","ICT05","2024-04-10","Theory","Present"),
+
+  
+    ("TG1009","ICT05","2024-01-03","Theory","Absent"),
+    ("TG1009","ICT05","2024-01-10","Theory","Present"),
+    ("TG1009","ICT05","2024-01-17","Theory","Present"),
+    ("TG1009","ICT05","2024-01-24","Theory","Present"),
+    ("TG1009","ICT05","2024-01-31","Theory","Present"),
+
+    ("TG1009","ICT05","2024-02-07","Theory","Absent"),
+    ("TG1009","ICT05","2024-02-14","Theory","Present"),
+    ("TG1009","ICT05","2024-02-21","Theory","Present"),
+    ("TG1009","ICT05","2024-03-27","Theory","Present"),
+    ("TG1009","ICT05","2024-03-05","Theory","Present"),
+
+    ("TG1009","ICT05","2024-03-12","Theory","Present"),
+    ("TG1009","ICT05","2024-03-19","Theory","Present"),
+    ("TG1009","ICT05","2024-03-27","Theory","Present"),
+    ("TG1009","ICT05","2024-04-03","Theory","Present"),
+    ("TG1009","ICT05","2024-04-10","Theory","Present"),
+
+    ("TG1010","ICT05","2024-01-03","Theory","Absent"),
+    ("TG1010","ICT05","2024-01-10","Theory","Absent"),
+    ("TG1010","ICT05","2024-01-17","Theory","Absent"),
+    ("TG1010","ICT05","2024-01-24","Theory","Absent"),
+    ("TG1010","ICT05","2024-01-31","Theory","Present"),
+
+    ("TG1010","ICT05","2024-02-07","Theory","Absent"),
+    ("TG1010","ICT05","2024-02-14","Theory","Present"),
+    ("TG1010","ICT05","2024-02-21","Theory","Absent"),
+    ("TG1010","ICT05","2024-03-27","Theory","Present"),
+    ("TG1010","ICT05","2024-03-05","Theory","Present"),
+
+    ("TG1010","ICT05","2024-03-12","Theory","Present"),
+    ("TG1010","ICT05","2024-03-19","Theory","Absent"),
+    ("TG1010","ICT05","2024-03-27","Theory","Absent"),
+    ("TG1010","ICT05","2024-04-03","Theory","Present"),
+    ("TG1010","ICT05","2024-04-10","Theory","Present"),
+
+
+    -- thursday
+    ("TG1001","ICT02","2024-01-04","Theory","Present"),
+    ("TG1001","ICT02","2024-01-11","Theory","Present"),
+    ("TG1001","ICT02","2024-01-18","Theory","Present"),
+    ("TG1001","ICT02","2024-01-25","Theory","Present"),
+    ("TG1001","ICT02","2024-02-01","Theory","Present"),
+
+    ("TG1001","ICT02","2024-02-08","Theory","Present"),
+    ("TG1001","ICT02","2024-02-15","Theory","Present"),
+    ("TG1001","ICT02","2024-02-22","Theory","Present"),
+    ("TG1001","ICT02","2024-03-29","Theory","Present"),
+    ("TG1001","ICT02","2024-03-07","Theory","Present"),
+
+    ("TG1001","ICT02","2024-03-14","Theory","Present"),
+    ("TG1001","ICT02","2024-03-21","Theory","Present"),
+    ("TG1001","ICT02","2024-03-28","Theory","Present"),
+    ("TG1001","ICT02","2024-04-04","Theory","Present"),
+    ("TG1001","ICT02","2024-04-11","Theory","Absent"),
+
+ 
+    ("TG1002","ICT02","2024-01-04","Theory","Present"),
+    ("TG1002","ICT02","2024-01-11","Theory","Present"),
+    ("TG1002","ICT02","2024-01-18","Theory","Present"),
+    ("TG1002","ICT02","2024-01-25","Theory","Present"),
+    ("TG1002","ICT02","2024-02-01","Theory","Present"),
+
+    ("TG1002","ICT02","2024-02-08","Theory","Present"),
+    ("TG1002","ICT02","2024-02-15","Theory","Present"),
+    ("TG1002","ICT02","2024-02-22","Theory","Present"),
+    ("TG1002","ICT02","2024-03-29","Theory","Present"),
+    ("TG1002","ICT02","2024-03-07","Theory","Present"),
+
+    ("TG1002","ICT02","2024-03-14","Theory","Present"),
+    ("TG1002","ICT02","2024-03-21","Theory","Present"),
+    ("TG1002","ICT02","2024-03-28","Theory","Present"),
+    ("TG1002","ICT02","2024-04-04","Theory","Present"),
+    ("TG1002","ICT02","2024-04-11","Theory","Present"),
+
+   
+    ("TG1003","ICT02","2024-01-04","Theory","Present"),
+    ("TG1003","ICT02","2024-01-11","Theory","Present"),
+    ("TG1003","ICT02","2024-01-18","Theory","Present"),
+    ("TG1003","ICT02","2024-01-25","Theory","Present"),
+    ("TG1003","ICT02","2024-02-01","Theory","Absent"),
+
+    ("TG1003","ICT02","2024-02-08","Theory","Present"),
+    ("TG1003","ICT02","2024-02-15","Theory","Present"),
+    ("TG1003","ICT02","2024-02-22","Theory","Present"),
+    ("TG1003","ICT02","2024-03-29","Theory","Present"),
+    ("TG1003","ICT02","2024-03-07","Theory","Present"),
+
+    ("TG1003","ICT02","2024-03-14","Theory","Present"),
+    ("TG1003","ICT02","2024-03-21","Theory","Present"),
+    ("TG1003","ICT02","2024-03-28","Theory","Present"),
+    ("TG1003","ICT02","2024-04-04","Theory","Present"),
+    ("TG1003","ICT02","2024-04-11","Theory","Present"),
+
+ 
+    ("TG1004","ICT02","2024-01-04","Theory","Present"),
+    ("TG1004","ICT02","2024-01-11","Theory","Present"),
+    ("TG1004","ICT02","2024-01-18","Theory","Present"),
+    ("TG1004","ICT02","2024-01-25","Theory","Present"),
+    ("TG1004","ICT02","2024-02-01","Theory","Present"),
+
+    ("TG1004","ICT02","2024-02-08","Theory","Present"),
+    ("TG1004","ICT02","2024-02-15","Theory","Present"),
+    ("TG1004","ICT02","2024-02-22","Theory","Absent"),
+    ("TG1004","ICT02","2024-03-29","Theory","Present"),
+    ("TG1004","ICT02","2024-03-07","Theory","Present"),
+
+    ("TG1004","ICT02","2024-03-14","Theory","Present"),
+    ("TG1004","ICT02","2024-03-21","Theory","Present"),
+    ("TG1004","ICT02","2024-03-28","Theory","Present"),
+    ("TG1004","ICT02","2024-04-04","Theory","Present"),
+    ("TG1004","ICT02","2024-04-11","Theory","Present"),
+
+ 
+    ("TG1005","ICT02","2024-01-04","Theory","Present"),
+    ("TG1005","ICT02","2024-01-11","Theory","Present"),
+    ("TG1005","ICT02","2024-01-18","Theory","Present"),
+    ("TG1005","ICT02","2024-01-25","Theory","Present"),
+    ("TG1005","ICT02","2024-02-01","Theory","Present"),
+
+    ("TG1005","ICT02","2024-02-08","Theory","Present"),
+    ("TG1005","ICT02","2024-02-15","Theory","Present"),
+    ("TG1005","ICT02","2024-02-22","Theory","Present"),
+    ("TG1005","ICT02","2024-03-29","Theory","Present"),
+    ("TG1005","ICT02","2024-03-07","Theory","Present"),
+
+    ("TG1005","ICT02","2024-03-14","Theory","Present"),
+    ("TG1005","ICT02","2024-03-21","Theory","Present"),
+    ("TG1005","ICT02","2024-03-28","Theory","Present"),
+    ("TG1005","ICT02","2024-04-04","Theory","Present"),
+    ("TG1005","ICT02","2024-04-11","Theory","Present"),
+
+    
+   
+    ("TG1006","ICT02","2024-01-04","Theory","Present"),
+    ("TG1006","ICT02","2024-01-11","Theory","Present"),
+    ("TG1006","ICT02","2024-01-18","Theory","Present"),
+    ("TG1006","ICT02","2024-01-25","Theory","Present"),
+    ("TG1006","ICT02","2024-02-01","Theory","Present"),
+
+    ("TG1006","ICT02","2024-02-08","Theory","Present"),
+    ("TG1006","ICT02","2024-02-15","Theory","Present"),
+    ("TG1006","ICT02","2024-02-22","Theory","Present"),
+    ("TG1006","ICT02","2024-03-29","Theory","Present"),
+    ("TG1006","ICT02","2024-03-07","Theory","Present"),
+
+    ("TG1006","ICT02","2024-03-14","Theory","Present"),
+    ("TG1006","ICT02","2024-03-21","Theory","Present"),
+    ("TG1006","ICT02","2024-03-28","Theory","Present"),
+    ("TG1006","ICT02","2024-04-04","Theory","Present"),
+    ("TG1006","ICT02","2024-04-11","Theory","Present"),
+
+ 
+    ("TG1007","ICT02","2024-01-04","Theory","Present"),
+    ("TG1007","ICT02","2024-01-11","Theory","Present"),
+    ("TG1007","ICT02","2024-01-18","Theory","Present"),
+    ("TG1007","ICT02","2024-01-25","Theory","Present"),
+    ("TG1007","ICT02","2024-02-01","Theory","Present"),
+
+    ("TG1007","ICT02","2024-02-08","Theory","Present"),
+    ("TG1007","ICT02","2024-02-15","Theory","Present"),
+    ("TG1007","ICT02","2024-02-22","Theory","Present"),
+    ("TG1007","ICT02","2024-03-29","Theory","Present"),
+    ("TG1007","ICT02","2024-03-07","Theory","Present"),
+
+    ("TG1007","ICT02","2024-03-14","Theory","Present"),
+    ("TG1007","ICT02","2024-03-21","Theory","Present"),
+    ("TG1007","ICT02","2024-03-28","Theory","Present"),
+    ("TG1007","ICT02","2024-04-04","Theory","Present"),
+    ("TG1007","ICT02","2024-04-11","Theory","Present"),
+
+
+    ("TG1008","ICT02","2024-01-04","Theory","Absent"),
+    ("TG1008","ICT02","2024-01-11","Theory","Present"),
+    ("TG1008","ICT02","2024-01-18","Theory","Present"),
+    ("TG1008","ICT02","2024-01-25","Theory","Present"),
+    ("TG1008","ICT02","2024-02-01","Theory","Present"),
+
+    ("TG1008","ICT02","2024-02-08","Theory","Present"),
+    ("TG1008","ICT02","2024-02-15","Theory","Present"),
+    ("TG1008","ICT02","2024-02-22","Theory","Present"),
+    ("TG1008","ICT02","2024-03-29","Theory","Present"),
+    ("TG1008","ICT02","2024-03-07","Theory","Present"),
+
+    ("TG1008","ICT02","2024-03-14","Theory","Present"),
+    ("TG1008","ICT02","2024-03-21","Theory","Present"),
+    ("TG1008","ICT02","2024-03-28","Theory","Present"),
+    ("TG1008","ICT02","2024-04-04","Theory","Present"),
+    ("TG1008","ICT02","2024-04-11","Theory","Present"),
+
+  
+    ("TG1009","ICT02","2024-01-04","Theory","Present"),
+    ("TG1009","ICT02","2024-01-11","Theory","Present"),
+    ("TG1009","ICT02","2024-01-18","Theory","Present"),
+    ("TG1009","ICT02","2024-01-25","Theory","Present"),
+    ("TG1009","ICT02","2024-02-01","Theory","Present"),
+
+    ("TG1009","ICT02","2024-02-08","Theory","Present"),
+    ("TG1009","ICT02","2024-02-15","Theory","Present"),
+    ("TG1009","ICT02","2024-02-22","Theory","Present"),
+    ("TG1009","ICT02","2024-03-29","Theory","Present"),
+    ("TG1009","ICT02","2024-03-07","Theory","Present"),
+
+    ("TG1009","ICT02","2024-03-14","Theory","Present"),
+    ("TG1009","ICT02","2024-03-21","Theory","Present"),
+    ("TG1009","ICT02","2024-03-28","Theory","Present"),
+    ("TG1009","ICT02","2024-04-04","Theory","Absent"),
+    ("TG1009","ICT02","2024-04-11","Theory","Present"),
+
+    ("TG1010","ICT02","2024-01-04","Theory","Present"),
+    ("TG1010","ICT02","2024-01-11","Theory","Present"),
+    ("TG1010","ICT02","2024-01-18","Theory","Present"),
+    ("TG1010","ICT02","2024-01-25","Theory","Present"),
+    ("TG1010","ICT02","2024-02-01","Theory","Present"),
+
+    ("TG1010","ICT02","2024-02-08","Theory","Present"),
+    ("TG1010","ICT02","2024-02-15","Theory","Present"),
+    ("TG1010","ICT02","2024-02-22","Theory","Present"),
+    ("TG1010","ICT02","2024-03-29","Theory","Present"),
+    ("TG1010","ICT02","2024-03-07","Theory","Present"),
+
+    ("TG1010","ICT02","2024-03-14","Theory","Absent"),
+    ("TG1010","ICT02","2024-03-21","Theory","Present"),
+    ("TG1010","ICT02","2024-03-28","Theory","Present"),
+    ("TG1010","ICT02","2024-04-04","Theory","Present"),
+    ("TG1010","ICT02","2024-04-11","Theory","Present");
 
