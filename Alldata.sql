@@ -24,3 +24,10 @@ INSERT INTO Student (studentId, sName, phoneNumber, email, adress, img, gender, 
 ('TG1008', 'Jessica Taylor', 6667778888, 'jessica@example.com', '505 Walnut St, City, Country', 'jessica_taylor.jpg', 'Female', 'password8'),
 ('TG1009', 'Christopher Anderson', 4445556666, 'christopher@example.com', '606 Spruce St, City, Country', 'christopher_anderson.jpg', 'Male', 'password9'),
 ('TG1010', 'Amanda Thomas', 1112223333, 'amanda@example.com', '707 Birch St, City, Country', 'amanda_thomas.jpg', 'Female', 'password10');
+
+-- TechnicalOfficer table
+INSERT INTO TechnicalOfficer (tecId, tName, phoneNumber, email, gender, pwd) VALUES
+('TO001', 'John Smith', 1234567890, 'john@example.com', 'Male', 'password1'),
+('TO002', 'Pushpa Doe', 9876543210, 'jane@example.com', 'Female', 'password2');
+
+
