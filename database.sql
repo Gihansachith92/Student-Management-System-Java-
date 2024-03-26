@@ -69,7 +69,9 @@ CREATE TABLE Cource(
       weeek INT,
       theory INT,
       practical INT,
-      PRIMARY KEY(courceCode)
+      lecturerId VARCHAR(20),
+      PRIMARY KEY(courceCode),
+      FOREIGN KEY(lecturerId) REFERENCES lecturer(lecturerId)
 );
 
 
