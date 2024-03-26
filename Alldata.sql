@@ -31,3 +31,4 @@ INSERT INTO TechnicalOfficer (tecId, tName, phoneNumber, email, gender, pwd) VAL
 ('TO002', 'Pushpa Doe', 9876543210, 'jane@example.com', 'Female', 'password2');
 
 
+
