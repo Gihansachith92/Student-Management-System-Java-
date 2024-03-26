@@ -6,11 +6,11 @@ VALUES ('admin001','admin',753383838,'admin@gmail.com','male','admin123');
 
 
 -- lecturer table
-INSERT INTO "admin" (lecturerId,lName,phoneNumber,email,gender,pwd,courceCode)
-VALUES  ('LEC001','Smith',1234567890,'smith@example.com','Male','pass123','ICT01'),
-        ('LEC002','Johnson',9876543210,'johnson@example.com','Female','abc@123','ICT02'),
-        ('LEC003','Brown',5555555555,'brown@example.com','Male','securePwd','ICT03'),
-        ('LEC004','Garcia',3333333333,'garcia@example.com','Female','p@ssw0rd','CS104'),
+INSERT INTO "admin" (lecturerId,lName,phoneNumber,email,gender,pwd)
+VALUES  ('LEC001','Smith',1234567890,'smith@example.com','Male','pass123'),
+        ('LEC002','Johnson',9876543210,'johnson@example.com','Female','abc@123'),
+        ('LEC003','Brown',5555555555,'brown@example.com','Male','securePwd'),
+        ('LEC004','Garcia',3333333333,'garcia@example.com','Female','p@ssw0rd');
 
 -- Student table
 INSERT INTO Student (studentId, sName, phoneNumber, email, adress, img, gender, pwd) VALUES
@@ -29,6 +29,18 @@ INSERT INTO Student (studentId, sName, phoneNumber, email, adress, img, gender, 
 INSERT INTO TechnicalOfficer (tecId, tName, phoneNumber, email, gender, pwd) VALUES
 ('TO001', 'John Smith', 1234567890, 'john@example.com', 'Male', 'password1'),
 ('TO002', 'Pushpa Doe', 9876543210, 'jane@example.com', 'Female', 'password2');
+
+
+-- Cource table
+INSERT INTO Course (courceCode, cName, credit, weeek, theory, practical, lecturerId) VALUES
+('ICT01', 'Data Structures and Algorithms', 3, 15, 1, 0, 'LEC001'),
+('ICT02', 'Object Oriented Programming', 2, 15, 1, 0, 'LEC002'),
+('ICT03', 'Object Oriented Programming Practicum', 2, 15, 0, 1, 'LEC002'),
+('ICT04', 'Object Oriented Analysis and Design', 3, 15, 1, 0, 'LEC003'),
+('ICT05', 'E-Commerce Implementation, Management and Security', 3, 15, 1, 0, 'LEC004'),
+('TCS2112', 'Business Economics I', 3, 15, 9, 3, 'LEC004');
+
+
 
 
 
