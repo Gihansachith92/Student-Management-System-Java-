@@ -1,4 +1,4 @@
--- admin table
+-- user table
 
 CREATE TABLE User(
       userId VARCHAR(20),
@@ -9,6 +9,42 @@ CREATE TABLE User(
       pwd VARCHAR(8),
       PRIMARY KEY(userId)
 );
+
+-- cource table
+
+CREATE TABLE Cource(
+      courceCode VARCHAR(20),
+      cName VARCHAR(20),
+      credit INT,
+      weeek INT,
+      theory INT,
+      practical INT,
+      userId VARCHAR(20),
+      PRIMARY KEY(courceCode),
+      FOREIGN KEY(userId) REFERENCES user(userId)
+);
+
+
+-- notice tables
+
+CREATE TABLE Notice(
+     number INT,
+     date VARCHAR(20),
+     title VARCHAR(20),
+     PRIMARY KEY(number)
+);
+
+-- timetable table
+
+CREATE TABLE timeTable(
+     title VARCHAR(20),
+     dipartment VARCHAR(10),
+     level INT,
+     
+);
+
+-- ///////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 
@@ -74,19 +110,9 @@ CREATE TABLE TechnicalOfficer(
 
 
 
--- cource table
 
-CREATE TABLE Cource(
-      courceCode VARCHAR(20),
-      cName VARCHAR(20),
-      credit INT,
-      weeek INT,
-      theory INT,
-      practical INT,
-      lecturerId VARCHAR(20),
-      PRIMARY KEY(courceCode),
-      FOREIGN KEY(lecturerId) REFERENCES lecturer(lecturerId)
-);
+
+
 
 
 -- student Marks table
@@ -146,12 +172,3 @@ CREATE TABLE Medical(
 
 
 
--- notice tables
-
-CREATE TABLE Notice(
-     number INT,
-     title VARCHAR(20),
-     date Date,
-     description VARCHAR(100),
-     PRIMARY KEY(number)
-);
