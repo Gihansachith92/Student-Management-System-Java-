@@ -1,5 +1,19 @@
 -- admin table
 
+CREATE TABLE User(
+      userId VARCHAR(20),
+      uName VARCHAR(20),
+      phoneNumber INT,
+      email VARCHAR(20),
+      gender VARCHAR(10),
+      pwd VARCHAR(8),
+      PRIMARY KEY(userId)
+);
+
+
+
+
+
 CREATE TABLE Admin(
          adminId VARCHAR(20),
          aName VARCHAR(20),
