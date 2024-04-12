@@ -2,6 +2,7 @@
 
 CREATE TABLE User(
       userId VARCHAR(20),
+      type VARCHAR(20),
       uName VARCHAR(20),
       phoneNumber INT,
       email VARCHAR(20),
@@ -39,7 +40,7 @@ CREATE TABLE Notice(
 CREATE TABLE timeTable(
      title VARCHAR(20),
      dipartment VARCHAR(10),
-     level INT,
+     level INT
      
 );
 
