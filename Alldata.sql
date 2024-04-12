@@ -1,3 +1,27 @@
+-- User Table
+INSERT INTO User (userId, type, uName, phoneNumber, email, gender, pwd, image) VALUES
+('admin001','admin','admin',753383838,'admin@gmail.com','male','admin123','admin.jpg'),
+('LEC001','lecturer','Smith',123456789,'smith@example.com','male','pass123','lecimage.jpg'),
+('LEC002','lecturer','Johnson',987254321,'johnson@example.com','female','pass123','lecimage.jpg'),
+('LEC003','lecturer','Brown',555555555,'brown@example.com','male','pass123','lecimage.jpg'),
+('LEC004','lecturer','Garcia',333333333,'garcia@example.com','Female','pass123','lecimage.jpg'),
+('TO001','TechnicalOfficer','John Smith',123456789,'john@example.com','Male','password1','technical.jpg'),
+('TO002','TechnicalOfficer','Pushpa Doe',876543210,'jane@example.com','Female','password2','technical.jpg'),
+('TG1001','Student','John Doe',123456789,'john@example.com','male','password1','john_doe.jpg'),
+('TG1002','Student','Jane Smith',987650321,'janeSmith@example.com','male','password2','jane_smith.jpg');
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -- Admin table
 INSERT INTO "admin" (adminId,aName,phoneNumber,email,gender,pwd)
@@ -31,26 +55,8 @@ INSERT INTO TechnicalOfficer (tecId, tName, phoneNumber, email, gender, pwd) VAL
 ('TO002', 'Pushpa Doe', 9876543210, 'jane@example.com', 'Female', 'password2');
 
 
--- User Table
-INSERT INTO User (userId, type, uName, phoneNumber, email, gender, pwd, image) VALUES
-('admin001','admin','admin',753383838,'admin@gmail.com','male','admin123','admin.jpg'),
-('LEC001','lecturer','Smith',1234567890,'smith@example.com','male','pass123','lecimage.jpg'),
-('LEC002','lecturer','Johnson',9872543210,'johnson@example.com','female','pass123','lecimage.jpg'),
-('LEC003','lecturer','Brown',5555555555,'brown@example.com','male','pass123','lecimage.jpg'),
-('LEC004','lecturer','Garcia',3333333333,'garcia@example.com','Female','pass123','lecimage.jpg'),
-('TO001','TechnicalOfficer','John Smith',1234567890,'john@example.com','Male','password1','technical.jpg'),
-('TO002','TechnicalOfficer','Pushpa Doe',9876543210,'jane@example.com','Female','password2','technical.jpg'),
-('TG1001','Student','John Doe',1234567890,'john@example.com','male','password1','john_doe.jpg'),
-('TG1002','Student','Jane Smith',9876503210,'janeSmith@example.com','male','password2','jane_smith.jpg');
-
-
-
-
-
-
-
 -- Cource table
-INSERT INTO Course (courceCode, cName, credit, weeek, theory, pratical, userID) VALUES
+INSERT INTO Cource (courceCode, cName, credit, weeek, theory, practical, userId) VALUES
 ('ICT01', 'Data Structures and Algorithms', 3, 15, 1, 0, 'LEC001'),
 ('ICT02', 'Object Oriented Programming', 2, 15, 1, 0, 'LEC002'),
 ('ICT03', 'Object Oriented Programming Practicum', 2, 15, 0, 1, 'LEC002'),
