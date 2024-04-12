@@ -8,6 +8,7 @@ CREATE TABLE User(
       email VARCHAR(20),
       gender VARCHAR(10),
       pwd VARCHAR(8),
+      image VARCHAR(100),
       PRIMARY KEY(userId)
 );
 
@@ -40,7 +41,8 @@ CREATE TABLE Notice(
 CREATE TABLE timeTable(
      title VARCHAR(20),
      dipartment VARCHAR(10),
-     level INT
+     level INT,
+     drivelink VARCHAR(200)
      
 );
 
