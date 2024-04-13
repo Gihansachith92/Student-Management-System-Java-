@@ -53,63 +53,63 @@ CREATE TABLE timeTable(
 
 
 
-CREATE TABLE Admin(
-         adminId VARCHAR(20),
-         aName VARCHAR(20),
-         phoneNumber INT,
-         email VARCHAR(20),
-         gender VARCHAR(10),
-         pwd VARCHAR(8),
-         PRIMARY KEY(adminId)
+-- CREATE TABLE Admin(
+--          adminId VARCHAR(20),
+--          aName VARCHAR(20),
+--          phoneNumber INT,
+--          email VARCHAR(20),
+--          gender VARCHAR(10),
+--          pwd VARCHAR(8),
+--          PRIMARY KEY(adminId)
          
-         );
+--          );
 
 
 
 -- lecturer table
 
-CREATE TABLE lecturer(
-         lecturerId VARCHAR(20),
-         lName VARCHAR(20),
-         phoneNumber INT,
-         email VARCHAR(20),
-         gender VARCHAR(10),
-         pwd VARCHAR(8),
-         PRIMARY KEY(lecturerId),
+-- CREATE TABLE lecturer(
+--          lecturerId VARCHAR(20),
+--          lName VARCHAR(20),
+--          phoneNumber INT,
+--          email VARCHAR(20),
+--          gender VARCHAR(10),
+--          pwd VARCHAR(8),
+--          PRIMARY KEY(lecturerId),
          
-         );
+--          );
 
 
 -- student table
 
-CREATE TABLE Student(
-         studentId VARCHAR(20),
-         sName VARCHAR(20),
-         phoneNumber INT,
-         email VARCHAR(20),
-         adress VARCHAR(30),
-         img VARCHAR(100),
-         gender VARCHAR(10),
-         pwd VARCHAR(8),
-         PRIMARY KEY(studentId)
+-- CREATE TABLE Student(
+--          studentId VARCHAR(20),
+--          sName VARCHAR(20),
+--          phoneNumber INT,
+--          email VARCHAR(20),
+--          adress VARCHAR(30),
+--          img VARCHAR(100),
+--          gender VARCHAR(10),
+--          pwd VARCHAR(8),
+--          PRIMARY KEY(studentId)
 
          
-         );
+--          );
 
 
 -- technical officer table
 
-CREATE TABLE TechnicalOfficer(
-         tecId VARCHAR(20),
-         tName VARCHAR(20),
-         phoneNumber INT,
-         email VARCHAR(20),
-         gender VARCHAR(10),
-         pwd VARCHAR(8),
-         PRIMARY KEY(tecId)
+-- CREATE TABLE TechnicalOfficer(
+--          tecId VARCHAR(20),
+--          tName VARCHAR(20),
+--          phoneNumber INT,
+--          email VARCHAR(20),
+--          gender VARCHAR(10),
+--          pwd VARCHAR(8),
+--          PRIMARY KEY(tecId)
 
          
-         );
+--          );
 
 
 
