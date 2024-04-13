@@ -32,14 +32,14 @@ CREATE TABLE Cource(
 CREATE TABLE Notice(
      number INT,
      date VARCHAR(20),
-     title VARCHAR(20),
+     title VARCHAR(200),
      PRIMARY KEY(number)
 );
 
 -- timetable table
 
 CREATE TABLE timeTable(
-     title VARCHAR(20),
+     title VARCHAR(100),
      dipartment VARCHAR(10),
      level INT,
      drivelink VARCHAR(200)
