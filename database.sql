@@ -3,12 +3,12 @@
 CREATE TABLE User(
       userId VARCHAR(20),
       type VARCHAR(20),
-      uName VARCHAR(20),
+      uName VARCHAR(100),
       phoneNumber INT,
-      email VARCHAR(20),
+      email VARCHAR(100),
       gender VARCHAR(10),
-      pwd VARCHAR(8),
-      image VARCHAR(100),
+      pwd VARCHAR(100),
+      image VARCHAR(300),
       PRIMARY KEY(userId)
 );
 
@@ -16,7 +16,7 @@ CREATE TABLE User(
 
 CREATE TABLE Cource(
       courceCode VARCHAR(20),
-      cName VARCHAR(20),
+      cName VARCHAR(100),
       credit INT,
       weeek INT,
       theory INT,
@@ -32,17 +32,17 @@ CREATE TABLE Cource(
 CREATE TABLE Notice(
      number INT,
      date VARCHAR(20),
-     title VARCHAR(200),
+     title VARCHAR(400),
      PRIMARY KEY(number)
 );
 
 -- timetable table
 
 CREATE TABLE timeTable(
-     title VARCHAR(100),
+     title VARCHAR(300),
      dipartment VARCHAR(10),
      level INT,
-     drivelink VARCHAR(200)
+     drivelink VARCHAR(500)
      
 );
 
