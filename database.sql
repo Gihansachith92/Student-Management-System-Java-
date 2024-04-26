@@ -63,49 +63,36 @@ CREATE TABLE StudentMarks(
       endP INT,
       endT INT,
       assesment INT,
-      userId VARCHAR(20),
-      courceCode VARCHAR(20),
-      FOREIGN KEY(userId) REFERENCES user(userId),
-      FOREIGN KEY (courceCode) REFERENCES Cource(courceCode)
-
-      
-);
+      userId VARCHAR(60),
+      courceCode VARCHAR(60),
+      FOREIGN KEY (userId) REFERENCES User(userId),
+      FOREIGN KEY (courceCode) REFERENCES Cource(courceCode));
 
 
 
 -- attendance table
 
-CREATE TABLE Attendance(
-      
-      studentId VARCHAR(20),
-      courceCode VARCHAR(20),
-      date Date,
-      type VARCHAR(10),
-      status VARCHAR(10),
-      medicalId VARCHAR(20),
-      FOREIGN KEY (studentId) REFERENCES Student(studentId),
-      FOREIGN KEY (medicalId) REFERENCES Medical(medicalId),
-      FOREIGN KEY (courceCode) REFERENCES Cource(courceCode)
-
-      
-);
+CREATE TABLE attendance (
+    userID VARCHAR(60),
+    courseCode VARCHAR(60),
+    sessionDate DATE,
+    sessionType ENUM('Theory', 'Practical', 'Combined'),
+    A_status ENUM('Present', 'Absent'),
+    FOREIGN KEY (userID) REFERENCES User(userId),
+    FOREIGN KEY (courseCode) REFERENCES Cource(courceCode));
 
 
 
 -- medical tables
 
-CREATE TABLE Medical(
-      studentId VARCHAR(20),
-      courceCode VARCHAR(20),
-      date Date,
-      description VARCHAR(100),
-      medicalId VARCHAR(20),
-      PRIMARY KEY(medicalId),
-      FOREIGN KEY (studentId) REFERENCES Student(studentId),
-      FOREIGN KEY (courceCode) REFERENCES Cource(courceCode)
-
-      
-);
+CREATE TABLE medical(
+    medicalID VARCHAR(50),
+    courceCode VARCHAR(50),
+    userId VARCHAR(20),
+    description VARCHAR(60),
+    FOREIGN KEY(userId) REFERENCES User(userId),
+    FOREIGN KEY(courceCode) REFERENCES course(courceCode),
+    PRIMARY KEY(medicalID));
 
 
 
