@@ -19,7 +19,7 @@ INSERT INTO User (userId, type, uName, phoneNumber, email, gender, pwd, image) V
 ('TG1010','Student','Amanda Thomas',111222333,'amanda@example.com','female','password10','/Icons/test16.jpg');
 
 --Cource table Data
-INSERT INTO newcourse (courceCode, cName, credit, weeek, theory, practical, userId) VALUES
+INSERT INTO Cource(courceCode, cName, credit, weeek, theory, practical, userId) VALUES
 ('ICT01', 'Data Structures and Algorithms', 3, 15, 1, 0, 'LEC001'),
 ('ICT02', 'Object Oriented Programming', 2, 15, 1, 0, 'LEC002'),
 ('ICT03', 'Object Oriented Programming Practicum', 2, 15, 0, 1, 'LEC002'),
