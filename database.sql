@@ -73,13 +73,13 @@ CREATE TABLE StudentMarks(
 -- attendance table
 
 CREATE TABLE attendance (
-    userID VARCHAR(60),
-    courseCode VARCHAR(60),
+    userId VARCHAR(60),
+    courceCode VARCHAR(60),
     sessionDate DATE,
     sessionType ENUM('Theory', 'Practical', 'Combined'),
     A_status ENUM('Present', 'Absent'),
-    FOREIGN KEY (userID) REFERENCES User(userId),
-    FOREIGN KEY (courseCode) REFERENCES Cource(courceCode));
+    FOREIGN KEY (userId) REFERENCES User(userId),
+    FOREIGN KEY (courceCode) REFERENCES Cource(courceCode));
 
 
 
