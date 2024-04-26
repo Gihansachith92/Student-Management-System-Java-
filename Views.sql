@@ -19,3 +19,15 @@ SELECT e.userId, e.courceCode,
     END AS `Eligibility_Status`
 FROM StudentMarks e
 INNER JOIN User s ON e.userId = s.userId;
+
+
+
+
+-- Create the StudentEnd_Marks view with a 70% adjusted assessment mark
+CREATE VIEW StudentEnd_Marks AS
+SELECT e.userId, e.courceCode, 
+    ((e.endP  + e.endT ) * 0.70) AS `EndMark`
+FROM StudentMarks e
+INNER JOIN User s ON e.userId = s.userId;
+
+

@@ -23,7 +23,7 @@ CREATE TABLE Cource(
       practical INT,
       userId VARCHAR(20),
       PRIMARY KEY(courceCode),
-      FOREIGN KEY(userId) REFERENCES User(userId) ON DELETE CASCADE ON UPDATE CASCADE
+      FOREIGN KEY(userId) REFERENCES User(userId)
 
 );
 
