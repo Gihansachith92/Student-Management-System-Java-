@@ -997,10 +997,10 @@ INSERT INTO StudentMarks (q1, q2, q3, midP, midT, endP, endT, assesment, userId,
     (30, 35, 25, 0, 43, 0, 28, 32, 'TG1010', 'TCS2112');
 
     CREATE VIEW attendance_eligibility AS
-    SELECT userID, courseCode,sessionType, COUNT(A_status)/15 * 100 AS "80% Prercentage" , IF((COUNT(A_status)/15 * 100)>=80,"Eligible","Not Eligible") As "Eligiblity"
+    SELECT userID, courceCode,sessionType, COUNT(A_status)/15 * 100 AS "80% Prercentage" , IF((COUNT(A_status)/15 * 100)>=80,"Eligible","Not Eligible") As "Eligiblity"
     FROM attendance
     WHERE A_status = "Present"
-    GROUP BY userID, courseCode,sessionType;
+    GROUP BY userID, courceCode,sessionType;
 
 
 
