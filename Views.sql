@@ -31,3 +31,17 @@ FROM StudentMarks e
 INNER JOIN User s ON e.userId = s.userId;
 
 
+
+-- Create the StudentFinal_Marks view
+create view StudentFinal_Marks AS
+select c.userId, c.courceCode, (c.CA_Marks + e.EndMark) as FinalMark
+from studentca_marks c, StudentEnd_Marks e , attendance_eligibility a
+where c.Eligibility_Status = 'Eligible' and a.Eligiblity = 'Eligible' and
+c.userId = e.userId and
+c.courceCode = e.courceCode and
+a.userId = e.userId and
+a.userId = c.userId and
+a.courceCode = e.courceCode and
+a.courceCode = c.courceCode ;
+
+
