@@ -91,7 +91,7 @@ CREATE TABLE medical(
     userId VARCHAR(20),
     description VARCHAR(60),
     FOREIGN KEY(userId) REFERENCES User(userId),
-    FOREIGN KEY(courceCode) REFERENCES course(courceCode),
+    FOREIGN KEY(courceCode) REFERENCES cource(courceCode),
     PRIMARY KEY(medicalID));
 
 
