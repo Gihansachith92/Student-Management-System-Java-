@@ -2,21 +2,21 @@
 INSERT INTO User (userId, type, uName, phoneNumber, email, gender, pwd, image) VALUES
 ('admin001','admin','admin',753383838,'admin@gmail.com','male','admin123','/Icons/admin.jpg'),
 ('LEC001','lecturer','Smith',123456789,'smith@example.com','male','pass123','/Icons/test1.jpglecimage.jpg'),
-('LEC002','lecturer','Johnson',987254321,'johnson@example.com','female','pass123','/Icons/lecimage.jpg'),
-('LEC003','lecturer','Brown',555555555,'brown@example.com','male','pass123','/Icons/lecimage.jpg'),
-('LEC004','lecturer','Garcia',333333333,'garcia@example.com','Female','pass123','/Icons/lecimage.jpg'),
-('TO001','TechnicalOfficer','John Smith',123456789,'john@example.com','Male','password1','/Icons/technical.jpg'),
-('TO002','TechnicalOfficer','Pushpa Doe',876543210,'jane@example.com','Female','password2','/Icons/technical.jpg'),
-('TG1001','Student','John Doe',123456789,'john@example.com','male','password1','/Icons/john_doe.jpg'),
-('TG1002','Student','Jane Smith',987650321,'janeSmith@example.com','male','password2','/Icons/jane_smith.jpg'),
-('TG1003','Student','David Johnson',555444333,'david@example.com','male','password3','/Icons/jane_smith.jpg'),
-('TG1004','Student','Emily Davis',222333444,'emily@example.com','female','password4','/Icons/jane_smith.jpg'),
-('TG1005','Student','Michael Brown',777888999,'michael@example.com','male','password5','/Icons/michael_brown.jpg'),
-('TG1006','Student','Jennifer Wilson',333222111,'jennifer@example.com','female','password6','/Icons/jennifer_wilson.jpg'),
-('TG1007','Student','Daniel Martinez',999888777,'daniel@example.com','male','password7','/Icons/daniel_martinez.jpg'),
-('TG1008','Student','Jessica Taylor',666777888,'jessica@example.com','female','password8','/Icons/jessica_taylor.jpg'),
-('TG1009','Student','Christopher Anderson',444555666,'christopher@example.com','male','password9','/Icons/christopher_anderson.jpg'),
-('TG1010','Student','Amanda Thomas',111222333,'amanda@example.com','female','password10','/Icons/amanda_thomas.jpg');
+('LEC002','lecturer','Johnson',987254321,'johnson@example.com','female','pass123','/Icons/test2.jpg'),
+('LEC003','lecturer','Brown',555555555,'brown@example.com','male','pass123','/Icons/test3.jpg'),
+('LEC004','lecturer','Garcia',333333333,'garcia@example.com','Female','pass123','/Icons/test4.jpg'),
+('TO001','TechnicalOfficer','John Smith',123456789,'john@example.com','Male','password1','/Icons/test5.jpg'),
+('TO002','TechnicalOfficer','Pushpa Doe',876543210,'jane@example.com','Female','password2','/Icons/test6.jpg'),
+('TG1001','Student','John Doe',123456789,'john@example.com','male','password1','/Icons/test7.jpg'),
+('TG1002','Student','Jane Smith',987650321,'janeSmith@example.com','male','password2','/Icons/test8.jpg'),
+('TG1003','Student','David Johnson',555444333,'david@example.com','male','password3','/Icons/test9.jpg'),
+('TG1004','Student','Emily Davis',222333444,'emily@example.com','female','password4','/Icons/test10.jpg'),
+('TG1005','Student','Michael Brown',777888999,'michael@example.com','male','password5','/Icons/test11.jpg'),
+('TG1006','Student','Jennifer Wilson',333222111,'jennifer@example.com','female','password6','/Icons/test12.jpg'),
+('TG1007','Student','Daniel Martinez',999888777,'daniel@example.com','male','password7','/Icons/test13.jpg'),
+('TG1008','Student','Jessica Taylor',666777888,'jessica@example.com','female','password8','/Icons/test14.jpg'),
+('TG1009','Student','Christopher Anderson',444555666,'christopher@example.com','male','password9','/Icons/test15.jpg'),
+('TG1010','Student','Amanda Thomas',111222333,'amanda@example.com','female','password10','/Icons/test16.jpg');
 
 --Cource table Data
 INSERT INTO newcourse (courceCode, cName, credit, weeek, theory, practical, userId) VALUES
