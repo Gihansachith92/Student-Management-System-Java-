@@ -1,7 +1,7 @@
 
-package Admin;
+package admin;
 
-import db.MyConnection;
+import connection.Myconnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,13 +14,13 @@ import javax.swing.table.DefaultTableModel;
 
 public class Cource {
     
-    Connection con = MyConnection.getConnection();
+    Connection con = Myconnection.getConnection();
     PreparedStatement ps;
     
     // insert data into cource table
     
      public void insert(String code, String name , int credit , int week, int theory , int practical, String lecid ){
-       String sql = "insert into cource values(?,?,?,?,?,?,?)";
+       String sql = "insert into Cource values(?,?,?,?,?,?,?)";
         try {
             
             ps = con.prepareStatement(sql);
@@ -44,7 +44,7 @@ public class Cource {
      
       //get all the value to cource table
     public void getTableValue(JTable table, String searchValue){
-       String sql = "select * from cource";
+       String sql = "select * from Cource";
        
         try {
             ps = con.prepareStatement(sql);
@@ -73,7 +73,7 @@ public class Cource {
     // update cource value 
     
     public void update(String code, String name , int credit , int week, int theory , int practical, String lecid){
-       String sql = "update cource set cName=?, credit=?, weeek=?, theory=?, practical=?, userId=? where courceCode=?";
+       String sql = "update Cource set cName=?, credit=?, weeek=?, theory=?, practical=?, userId=? where courceCode=?";
        
        try {
             ps = con.prepareStatement(sql);
@@ -105,7 +105,7 @@ public class Cource {
        int yno = JOptionPane.showConfirmDialog(null, "Cource data will delete permenetly!","Cource Delete", JOptionPane.OK_CANCEL_OPTION,0);
        if(yno == JOptionPane.OK_OPTION){
            try {
-               ps = con.prepareStatement("delete from cource where courceCode=?");
+               ps = con.prepareStatement("delete from Cource where courceCode=?");
                ps.setString(1, code);
                
                 if(ps.executeUpdate() > 0){

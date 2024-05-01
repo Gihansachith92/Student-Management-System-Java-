@@ -1,7 +1,7 @@
 
-package Admin;
+package admin;
 
-import db.MyConnection;
+import connection.Myconnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,13 +14,13 @@ import javax.swing.table.DefaultTableModel;
 
 public class Timetable {
     
-    Connection con = MyConnection.getConnection();
+    Connection con = Myconnection.getConnection();
     PreparedStatement ps;
     
     // insert data into Time table table
     
     public void insert(  String title , String dept, int level, String dlink){
-       String sql = "insert into timetable values(?,?,?,?)";
+       String sql = "insert into timeTable values(?,?,?,?)";
         try {
             
             ps = con.prepareStatement(sql);
@@ -42,7 +42,7 @@ public class Timetable {
     
      //get all the value to Time table table
     public void getTableValue(JTable table, String searchValue){
-       String sql = "select * from timetable";
+       String sql = "select * from timeTable";
        
         try {
             ps = con.prepareStatement(sql);
@@ -69,7 +69,7 @@ public class Timetable {
     //update time table value
     
     public void update(String title , String dept, int level, String dlink){
-       String sql = "update timetable set dipartment=?, level=?, drivelink=?  where title=?";
+       String sql = "update timeTable set dipartment=?, level=?, drivelink=?  where title=?";
        
        try {
             ps = con.prepareStatement(sql);
@@ -97,7 +97,7 @@ public class Timetable {
        int yno = JOptionPane.showConfirmDialog(null, "Time Table data will delete permenetly!","Time Table Delete", JOptionPane.OK_CANCEL_OPTION,0);
        if(yno == JOptionPane.OK_OPTION){
            try {
-               ps = con.prepareStatement("delete from timetable where title=?");
+               ps = con.prepareStatement("delete from timeTable where title=?");
                ps.setString(1, title);
                
                 if(ps.executeUpdate() > 0){

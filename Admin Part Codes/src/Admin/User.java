@@ -1,7 +1,7 @@
 
-package Admin;
+package admin;
 
-import db.MyConnection;
+import connection.Myconnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -9,38 +9,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-//import java.sql.Statement;
 import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
-//import java.sql.SQLException;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
+
 
 public class User {
-    Connection con = MyConnection.getConnection();
+    Connection con = Myconnection.getConnection();
     PreparedStatement ps;
-    
-//    public int getMax(){
-//     int id = 0;
-//     Statement st;
-//        try {
-//            st = con.createStatement();
-//            ResultSet rs = st.executeQuery("select max(id) from User");
-//            while(rs.next()){
-//              id = rs.getInt(1);
-//            }
-//            
-//        } catch (SQLException ex) {
-//            Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        return id + 1;
-//    }
-    
-    
+       
     // insert data into user table
-    
     public void insert(String id, String type , String name , int pnumber, String email , String gender, String password ,String imagepath){
-       String sql = "insert into user values(?,?,?,?,?,?,?,?)";
+       String sql = "insert into User values(?,?,?,?,?,?,?,?)";
         try {
             
             ps = con.prepareStatement(sql);
@@ -64,7 +43,7 @@ public class User {
     
     //get all the value to user table
     public void getTableValue(JTable table, String searchValue){
-       String sql = "select * from user";
+       String sql = "select * from User";
        
         try {
             ps = con.prepareStatement(sql);
@@ -92,9 +71,8 @@ public class User {
     
     
     // update user values
-    
     public void update(String id, String type , String name , int pnumber, String email , String gender, String password ,String imagepath){
-       String sql = "update user set type=?, uName=?, phoneNumber=?, email=?, gender=?, pwd=?, image=? where userId=?";
+       String sql = "update User set type=?, uName=?, phoneNumber=?, email=?, gender=?, pwd=?, image=? where userId=?";
        
         try {
             ps = con.prepareStatement(sql);
@@ -120,12 +98,11 @@ public class User {
     
     
     //user data delete
-    
     public void delete(String id){
        int yno = JOptionPane.showConfirmDialog(null, "User data will delete permenetly!","User Delete", JOptionPane.OK_CANCEL_OPTION,0);
        if(yno == JOptionPane.OK_OPTION){
            try {
-               ps = con.prepareStatement("delete from user where userId=?");
+               ps = con.prepareStatement("delete from User where userId=?");
                ps.setString(1, id);
                
                 if(ps.executeUpdate() > 0){
@@ -138,8 +115,5 @@ public class User {
          
        }
     }
-    
-    
-    
-    
+     
 }

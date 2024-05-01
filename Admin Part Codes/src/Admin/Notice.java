@@ -1,7 +1,7 @@
 
-package Admin;
+package admin;
 
-import db.MyConnection;
+import connection.Myconnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,14 +14,14 @@ import javax.swing.table.DefaultTableModel;
 
 public class Notice {
     
-    Connection con = MyConnection.getConnection();
+    Connection con = Myconnection.getConnection();
     PreparedStatement ps;
     
     
     // insert data into notice table
     
     public void insert( int nnumber, String date , String title){
-       String sql = "insert into notice values(?,?,?)";
+       String sql = "insert into Notice values(?,?,?)";
         try {
             
             ps = con.prepareStatement(sql);
@@ -42,7 +42,7 @@ public class Notice {
     
     //get all the value to notice table
     public void getTableValue(JTable table, String searchValue){
-       String sql = "select * from notice";
+       String sql = "select * from Notice";
        
         try {
             ps = con.prepareStatement(sql);
@@ -67,7 +67,7 @@ public class Notice {
     // update Notice values
     
     public void update(int nnumber, String date , String title){
-       String sql = "update notice set date=?, title=? where number=?";
+       String sql = "update Notice set date=?, title=? where number=?";
        
        try {
             ps = con.prepareStatement(sql);
@@ -94,7 +94,7 @@ public class Notice {
        int yno = JOptionPane.showConfirmDialog(null, "Notice data will delete permenetly!","Notice Delete", JOptionPane.OK_CANCEL_OPTION,0);
        if(yno == JOptionPane.OK_OPTION){
            try {
-               ps = con.prepareStatement("delete from notice where number=?");
+               ps = con.prepareStatement("delete from Notice where number=?");
                ps.setInt(1, number);
                
                 if(ps.executeUpdate() > 0){
