@@ -74,34 +74,70 @@ public class Medical extends javax.swing.JFrame {
         }
     }
     
+//    public void searchMedicalDetails(String medicalID) {
+//        if (medicalID.isEmpty()) {
+//            JOptionPane.showMessageDialog(this, "Please enter a Medical ID");
+//            return;
+//        }
+//        
+//        String sql = "SELECT * FROM medical WHERE medicalID = ?";
+//        try {
+//            ps = con.prepareStatement(sql);
+//            ps.setString(1, medicalID);
+//            ResultSet rs = ps.executeQuery();
+//            
+//            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+//            model.setRowCount(0);
+//            
+//            while (rs.next()) {
+//                Object[] row = {
+//                    rs.getString("medicalID"),
+//                    rs.getString("courceCode"),
+//                    rs.getString("userId"),
+//                    rs.getString("description")
+//                };
+//                model.addRow(row);
+//            }
+//        } catch (SQLException ex) {
+//            ex.printStackTrace();
+//        }
+//    }
+    
     public void searchMedicalDetails(String medicalID) {
         if (medicalID.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please enter a Medical ID");
             return;
         }
-        
+
+       
         String sql = "SELECT * FROM medical WHERE medicalID = ?";
-        try {
-            ps = con.prepareStatement(sql);
-            ps.setString(1, medicalID);
-            ResultSet rs = ps.executeQuery();
-            
-            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-            model.setRowCount(0);
-            
-            while (rs.next()) {
-                Object[] row = {
-                    rs.getString("medicalID"),
-                    rs.getString("courceCode"),
-                    rs.getString("userId"),
-                    rs.getString("description")
-                };
-                model.addRow(row);
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+    try {
+        ps = con.prepareStatement(sql);
+        ps.setString(1, medicalID);
+        ResultSet rs = ps.executeQuery();
+        
+        // Check if any records were found
+        if (rs.next()) {
+            // Populate the text fields with the fetched data
+            jTextField2MEDICALID.setText(rs.getString("medicalID"));
+            jTextField3COURSECODE.setText(rs.getString("courceCode"));
+            jTextField4USERID.setText(rs.getString("userId"));
+            jTextArea1.setText(rs.getString("description"));
+        } else {
+            // Display a message if no records were found
+            JOptionPane.showMessageDialog(this, "No medical record found for the specified Medical ID");
         }
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+        JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
     }
+        
+    }
+    
+    
+    
+    
+    
     
     public void update(String medicalID, String courceCode, String userId, String description) {
         String sql = "UPDATE medical SET courceCode=?, userId=?, description=? WHERE medicalID=?";

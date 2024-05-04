@@ -4,17 +4,42 @@
  */
 package technicalofficer;
 
+import java.awt.Color;
+import javax.swing.table.DefaultTableModel;
+import admin.User;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author hispe
  */
 public class Notice extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Notice
-     */
+    TechNotice techNotice = new TechNotice();
+    private DefaultTableModel model;
+    private int rowIndex;
+    
     public Notice() {
         initComponents();
+        init();
+    }
+    
+    public void init(){
+    
+      tableViewNotice();
+     
+    }
+     private void tableViewNotice(){
+      techNotice.getTableValue(jTable6, "");
+      model = (DefaultTableModel) jTable6.getModel();
+      jTable6.setRowHeight(30);
+      jTable6.setShowGrid(true);
+      jTable6.setGridColor(Color.black);
+      jTable6.setBackground(Color.white);
     }
 
     /**

@@ -1,5 +1,4 @@
-
-package technicalofficer;   
+package technicalofficer;
 
 import connection.Myconnection;
 import java.sql.Connection;
@@ -8,27 +7,25 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
+import java.text.ParseException;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author hispe
  */
-
-
 public class Attendance extends javax.swing.JFrame {
+
     Connection con = Myconnection.getConnection();
     PreparedStatement ps;
-    
-    
 
     public Attendance() {
         initComponents();
         displayAttendanceDetails();
-        
+
     }
 
-    
-    public void insert(String userID,String courceCode,String sessionDate,String sessionType,String A_status){
+    public void insert(String userID, String courceCode, String sessionDate, String sessionType, String A_status) {
         String sql = "INSERT INTO attendance VALUES(?,?,?,?,?)";
         try {
             ps = con.prepareStatement(sql);
@@ -37,103 +34,174 @@ public class Attendance extends javax.swing.JFrame {
             ps.setString(3, sessionDate);
             ps.setString(4, sessionType);
             ps.setString(5, A_status);
-            
-            
-           int rowsAffected = ps.executeUpdate();
-        
-        // Check if the query was successful
-        if (rowsAffected > 0) {
-            JOptionPane.showMessageDialog(null, "New attendance details added successfully");
-        } else {
-            JOptionPane.showMessageDialog(null, "Failed to add attendance details");
+
+            int rowsAffected = ps.executeUpdate();
+
+            // Check if the query was successful
+            if (rowsAffected > 0) {
+                JOptionPane.showMessageDialog(null, "New attendance details added successfully");
+            } else {
+                JOptionPane.showMessageDialog(null, "Failed to add attendance details");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
         }
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-        JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
+
     }
-        
-    }
-    
+
     public void update(String userID, String courceCode, String sessionDate, String sessionType, String A_status) {
-    String sql = "UPDATE attendance SET courceCode=?, sessionDate=?, sessionType=?, A_status=? WHERE userID=?";
-    try {
-        ps = con.prepareStatement(sql);
-        ps.setString(1, courceCode);
-        ps.setString(2, sessionDate);
-        ps.setString(3, sessionType);
-        ps.setString(4, A_status);
-        ps.setString(5, userID);
-        
-        if (ps.executeUpdate() > 0) {
-            JOptionPane.showMessageDialog(null, "Attendance details updated successfully");
-        }
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-    }
-}
+        String sql = "UPDATE attendance SET courceCode=?, sessionDate=?, sessionType=?, A_status=? WHERE userID=?";
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setString(1, courceCode);
+            ps.setString(2, sessionDate);
+            ps.setString(3, sessionType);
+            ps.setString(4, A_status);
+            ps.setString(5, userID);
 
+            if (ps.executeUpdate() > 0) {
+                JOptionPane.showMessageDialog(null, "Attendance details updated successfully");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void displayAttendanceDetails() {
+        String sql = "SELECT * FROM attendance";
+        try {
+            ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.setRowCount(0); // Clear the existing table data
+
+            while (rs.next()) {
+                Object[] row = {
+                    rs.getString("userID"),
+                    rs.getString("courceCode"),
+                    rs.getString("sessionDate"),
+                    rs.getString("sessionType"),
+                    rs.getString("A_status")
+                };
+                model.addRow(row);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void delete(String userID) {
+        String deleteSQL = "DELETE FROM attendance WHERE userID = ?";
+        try {
+            ps = con.prepareStatement(deleteSQL);
+            ps.setString(1, userID);
+            int rowsDeleted = ps.executeUpdate();
+            if (rowsDeleted > 0) {
+                JOptionPane.showMessageDialog(null, "Attendance record deleted successfully");
+            } else {
+                JOptionPane.showMessageDialog(null, "No such record found for deletion");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+//    public void searchAttendanceDetails() {
+//        // Get the user ID from the text field
+//        String userID = jTextField122.getText().trim();
+//
+//        // Check if the user ID field is empty
+//        if (userID.isEmpty()) {
+//            JOptionPane.showMessageDialog(this, "Please enter a User ID");
+//            return;
+//        }
+//
+//        // Create the SQL query to fetch attendance details for the given user ID
+//        String sql = "SELECT * FROM attendance WHERE userID = ?";
+//        try {
+//            ps = con.prepareStatement(sql);
+//            ps.setString(1, userID);
+//            ResultSet rs = ps.executeQuery();
+//
+//            // Create a DefaultTableModel to hold the fetched data
+//            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+//            model.setRowCount(0); // Clear the existing table data
+//
+//            // Populate the table with the fetched attendance details
+//            while (rs.next()) {
+//                Object[] row = {
+//                    rs.getString("userID"),
+//                    rs.getString("courceCode"),
+//                    rs.getString("sessionDate"),
+//                    rs.getString("sessionType"),
+//                    rs.getString("A_status")
+//                };
+//                model.addRow(row);
+//            }
+//
+////            if (rs.next()) {
+////
+////                jTextFieldUserid.setText(rs.getString("userId"));
+////                jTextFieldCoursecode.setText(rs.getString("courceCode"));
+////                jDateChooser1.setText(rs.getString("sessionDate"));
+////                jTextFieldSessiontype.setText(rs.getString("sessionType"));
+////                jTextFieldStatus.setText(rs.getString("A_status"));
+////            } else {
+////                // Display a message if no records were found
+////                JOptionPane.showMessageDialog(this, "No medical record found for the specified Medical ID");
+////            }
+//            if (model.getRowCount() > 0) {
+//                // Display the first record in the text fields
+//                jTable1.setRowSelectionInterval(0, 0);
+//                jTextFieldUserid.setText((String) jTable1.getValueAt(0, 0));
+//                jTextFieldCoursecode.setText((String) jTable1.getValueAt(0, 1));
+////                jDateChooser1.setText(rs.getString("sessionDate"));
+//                // You may need to convert session date to java.util.Date and set it to jDateChooser1
+//                // jDateChooser1.setDate(...);
+//
+//                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//                java.util.Date date = dateFormat.parse((String) jTable1.getValueAt(0, 2));
+//
+//                // Set the java.util.Date to jDateChooser1
+//                jDateChooser1.setDate(date);
+//
+//                jTextFieldSessiontype.setText((String) jTable1.getValueAt(0, 3));
+//                jTextFieldStatus.setText((String) jTable1.getValueAt(0, 4));
+//            } else {
+//                // Display a message if no records were found
+//                JOptionPane.showMessageDialog(this, "No attendance record found for the specified User ID");
+//            }
+//
+//        } catch (SQLException ex) {
+//            ex.printStackTrace();
+//        }
+//    }
     
-public void displayAttendanceDetails() {
-    String sql = "SELECT * FROM attendance";
-    try {
-        ps = con.prepareStatement(sql);
-        ResultSet rs = ps.executeQuery();
-        
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.setRowCount(0); // Clear the existing table data
-        
-        while (rs.next()) {
-            Object[] row = {
-                rs.getString("userID"),
-                rs.getString("courceCode"),
-                rs.getString("sessionDate"),
-                rs.getString("sessionType"),
-                rs.getString("A_status")
-            };
-            model.addRow(row);
-        }
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-    }
-}
-     
-public void delete(String userID) {
-    String deleteSQL = "DELETE FROM attendance WHERE userID = ?";
-    try {
-        ps = con.prepareStatement(deleteSQL);
-        ps.setString(1, userID);
-        int rowsDeleted = ps.executeUpdate();
-        if (rowsDeleted > 0) {
-            JOptionPane.showMessageDialog(null, "Attendance record deleted successfully");
-        } else {
-            JOptionPane.showMessageDialog(null, "No such record found for deletion");
-        }
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-    }
-}
-
-public void searchAttendanceDetails() {
+    
+    
+    public void searchAttendanceDetails() {
     // Get the user ID from the text field
-    String userID = jTextFieldUserid.getText().trim();
-    
+    String userID = jTextField122.getText().trim();
+
     // Check if the user ID field is empty
     if (userID.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Please enter a User ID");
         return;
     }
-    
+
     // Create the SQL query to fetch attendance details for the given user ID
     String sql = "SELECT * FROM attendance WHERE userID = ?";
     try {
         ps = con.prepareStatement(sql);
         ps.setString(1, userID);
         ResultSet rs = ps.executeQuery();
-        
+
         // Create a DefaultTableModel to hold the fetched data
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0); // Clear the existing table data
-        
+
         // Populate the table with the fetched attendance details
         while (rs.next()) {
             Object[] row = {
@@ -145,16 +213,36 @@ public void searchAttendanceDetails() {
             };
             model.addRow(row);
         }
-    } catch (SQLException ex) {
+
+        if (model.getRowCount() > 0) {
+            // Display the first record in the text fields
+            jTable1.setRowSelectionInterval(0, 0);
+            jTextFieldUserid.setText((String) jTable1.getValueAt(0, 0));
+            jTextFieldCoursecode.setText((String) jTable1.getValueAt(0, 1));
+
+            // Convert session date to java.util.Date and set it to jDateChooser1
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            java.util.Date date = dateFormat.parse((String) jTable1.getValueAt(0, 2));
+            jDateChooser1.setDate(date);
+
+            jTextFieldSessiontype.setText((String) jTable1.getValueAt(0, 3));
+            jTextFieldStatus.setText((String) jTable1.getValueAt(0, 4));
+        } else {
+            // Display a message if no records were found
+            JOptionPane.showMessageDialog(this, "No attendance record found for the specified User ID");
+        }
+
+    } catch (SQLException | ParseException ex) {
         ex.printStackTrace();
     }
 }
 
+    
+    
 
-private void populateTable(DefaultTableModel model) {
-    jTable1.setModel(model);
-}
-
+    private void populateTable(DefaultTableModel model) {
+        jTable1.setModel(model);
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -163,7 +251,7 @@ private void populateTable(DefaultTableModel model) {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButtonSearch = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jTextField122 = new javax.swing.JTextField();
         jButtonRefresh = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -204,9 +292,9 @@ private void populateTable(DefaultTableModel model) {
             }
         });
 
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jTextField1.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextField122.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jTextField122.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jTextField122.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jButtonRefresh.setBackground(new java.awt.Color(4, 8, 15));
         jButtonRefresh.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -357,7 +445,7 @@ private void populateTable(DefaultTableModel model) {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jTextField1)
+                                        .addComponent(jTextField122)
                                         .addGap(18, 18, 18)
                                         .addComponent(jButtonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
@@ -382,7 +470,7 @@ private void populateTable(DefaultTableModel model) {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField122, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonClear, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -428,52 +516,43 @@ private void populateTable(DefaultTableModel model) {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
-    
+
     private void jTextFieldCoursecodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCoursecodeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCoursecodeActionPerformed
 
-    
-    
-    
+
     private void jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddActionPerformed
 
-      
-    String userID = jTextFieldUserid.getText();
-    String courceCode = jTextFieldCoursecode.getText();
-    String sessionDate = null;
-    if (jDateChooser1.getDate() != null) {
-        // Convert the selected date to string in the desired format
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        sessionDate = dateFormat.format(jDateChooser1.getDate());
-    } else {
-        JOptionPane.showMessageDialog(this, "Session Date is missing");
-        return; // Exit the method if session date is not selected
-    }
-    String sessionType = jTextFieldSessiontype.getText();
-    String aStatus = jTextFieldStatus.getText();
-    
-    // Call the insert method to add the attendance record to the database
-    insert(userID, courceCode, sessionDate, sessionType, aStatus);
+        String userID = jTextFieldUserid.getText();
+        String courceCode = jTextFieldCoursecode.getText();
+        String sessionDate = null;
+        if (jDateChooser1.getDate() != null) {
+            // Convert the selected date to string in the desired format
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            sessionDate = dateFormat.format(jDateChooser1.getDate());
+        } else {
+            JOptionPane.showMessageDialog(this, "Session Date is missing");
+            return; // Exit the method if session date is not selected
+        }
+        String sessionType = jTextFieldSessiontype.getText();
+        String aStatus = jTextFieldStatus.getText();
 
-
-        
-   
-    
+        // Call the insert method to add the attendance record to the database
+        insert(userID, courceCode, sessionDate, sessionType, aStatus);
 
 
     }//GEN-LAST:event_jButtonAddActionPerformed
 
     private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed
         // TODO add your handling code here:
-       
+        searchAttendanceDetails();
+
 //    
 //    String userID = jTextFieldUserid.getText();
 //    DefaultTableModel model = getAttendanceDetails(userID);
 //    populateTable(model);
-          
+
     }//GEN-LAST:event_jButtonSearchActionPerformed
 
     private void jTextFieldStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldStatusActionPerformed
@@ -482,48 +561,48 @@ private void populateTable(DefaultTableModel model) {
 
     private void jButtonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateActionPerformed
         // TODO add your handling code here:
-     String userID = jTextFieldUserid.getText();
-    String courceCode = jTextFieldCoursecode.getText();
-    String sessionDate = null;
-    if (jDateChooser1.getDate() != null) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        sessionDate = dateFormat.format(jDateChooser1.getDate());
-    } else {
-        JOptionPane.showMessageDialog(this, "Session Date is missing");
-        return;
-    }
-    String sessionType = jTextFieldSessiontype.getText();
-    String aStatus = jTextFieldStatus.getText();
-    
-    // Call the update method to update the attendance record
-    update(userID, courceCode, sessionDate, sessionType, aStatus);
-    
+        String userID = jTextFieldUserid.getText();
+        String courceCode = jTextFieldCoursecode.getText();
+        String sessionDate = null;
+        if (jDateChooser1.getDate() != null) {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            sessionDate = dateFormat.format(jDateChooser1.getDate());
+        } else {
+            JOptionPane.showMessageDialog(this, "Session Date is missing");
+            return;
+        }
+        String sessionType = jTextFieldSessiontype.getText();
+        String aStatus = jTextFieldStatus.getText();
+
+        // Call the update method to update the attendance record
+        update(userID, courceCode, sessionDate, sessionType, aStatus);
+
     }//GEN-LAST:event_jButtonUpdateActionPerformed
 
     private void jButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteActionPerformed
         // TODO add your handling code here:
         String userID = jTextFieldUserid.getText();
-    // Call the delete method to delete the attendance record
-    delete(userID);
-        
+        // Call the delete method to delete the attendance record
+        delete(userID);
+
     }//GEN-LAST:event_jButtonDeleteActionPerformed
 
     private void jButtonRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRefreshActionPerformed
         // TODO add your handling code here:
-        
-         displayAttendanceDetails();
-        
-        
+
+        displayAttendanceDetails();
+
+
     }//GEN-LAST:event_jButtonRefreshActionPerformed
 
     private void jButtonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClearActionPerformed
         // TODO add your handling code here:
-        
+
         jTextFieldUserid.setText("");
-    jTextFieldCoursecode.setText("");
-    jDateChooser1.setDate(null);
-    jTextFieldSessiontype.setText("");
-    jTextFieldStatus.setText("");
+        jTextFieldCoursecode.setText("");
+//    jDateChooser1.setStr(null);
+        jTextFieldSessiontype.setText("");
+        jTextFieldStatus.setText("");
     }//GEN-LAST:event_jButtonClearActionPerformed
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
@@ -560,12 +639,11 @@ private void populateTable(DefaultTableModel model) {
             java.util.logging.Logger.getLogger(Attendance.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-          /* Create and display the form */
-         java.awt.EventQueue.invokeLater(() -> {
-        new Attendance().setVisible(true);
-    });
-}
-
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> {
+            new Attendance().setVisible(true);
+        });
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -586,13 +664,11 @@ private void populateTable(DefaultTableModel model) {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField122;
     private javax.swing.JTextField jTextFieldCoursecode;
     private javax.swing.JTextField jTextFieldSessiontype;
     private javax.swing.JTextField jTextFieldStatus;
     private javax.swing.JTextField jTextFieldUserid;
     // End of variables declaration//GEN-END:variables
-
-    
 
 }
