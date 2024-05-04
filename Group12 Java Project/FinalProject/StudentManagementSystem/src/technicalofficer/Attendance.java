@@ -1,6 +1,7 @@
 package technicalofficer;
 
 import connection.Myconnection;
+import java.awt.geom.RoundRectangle2D;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -22,6 +23,7 @@ public class Attendance extends javax.swing.JFrame {
     public Attendance() {
         initComponents();
         displayAttendanceDetails();
+         setShape(new RoundRectangle2D.Double(0,0,getWidth(),getHeight(),20,20));
 
     }
 

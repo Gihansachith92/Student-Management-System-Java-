@@ -5,6 +5,7 @@
 package admin;
 
 import java.awt.Color;
+import java.awt.geom.RoundRectangle2D;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,7 +25,7 @@ public class AdminCource extends javax.swing.JFrame {
 
     }
      public void init(){
-      
+      setShape(new RoundRectangle2D.Double(0,0,getWidth(),getHeight(),20,20));
       tableViewCource();
 
     }

@@ -19,6 +19,7 @@ import javax.swing.ImageIcon;
 import admin.AdminDashboard;
 import java.awt.Dimension;
 import java.awt.Insets;
+import java.awt.geom.RoundRectangle2D;
 import technicalofficer.TechnicalOfficerDashboard;
 import student.StudentDashboard;
 import javax.swing.BorderFactory;
@@ -38,6 +39,7 @@ public class Login extends javax.swing.JFrame {
 
     public Login() {
         initComponents();
+         setShape(new RoundRectangle2D.Double(0,0,getWidth(),getHeight(),20,20));
         setTextFieldPadding(jTextField1username, 10, 10, 10, 10);
         setTextFieldPadding(jPasswordField1, 10, 10, 10, 10);
         

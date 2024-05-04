@@ -7,6 +7,7 @@ package technicalofficer;
 import java.awt.Color;
 import javax.swing.table.DefaultTableModel;
 import admin.User;
+import java.awt.geom.RoundRectangle2D;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -29,7 +30,7 @@ public class Notice extends javax.swing.JFrame {
     }
     
     public void init(){
-    
+     setShape(new RoundRectangle2D.Double(0,0,getWidth(),getHeight(),20,20));
       tableViewNotice();
      
     }

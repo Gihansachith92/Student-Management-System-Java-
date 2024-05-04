@@ -5,6 +5,7 @@
 package student;
 
 import java.awt.Color;
+import java.awt.geom.RoundRectangle2D;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -25,9 +26,9 @@ public class StudentMarksGPA extends javax.swing.JFrame {
     }
 
     private void init() {
-
+        setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 20, 20));
         UID = studentGPAmarks.getUserId(StudentDashboard.emailadressSTU.getText());
-        value = studentGPAmarks.getUserValue(UID); 
+        value = studentGPAmarks.getUserValue(UID);
         setValue();
         tableviewGPAMARKSdetails(UID);
     }
@@ -47,11 +48,11 @@ public class StudentMarksGPA extends javax.swing.JFrame {
         GPAMARKSTABLE.setGridColor(Color.black);
         GPAMARKSTABLE.setBackground(Color.white);
     }
-    
+
     private void setValue() {
 
         gpalebel.setText(value[1]);
-        
+
     }
 
     /**

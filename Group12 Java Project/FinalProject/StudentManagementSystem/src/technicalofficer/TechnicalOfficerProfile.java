@@ -5,6 +5,7 @@
 package technicalofficer;
 
 import Dao.UserDao;
+import java.awt.geom.RoundRectangle2D;
 import javax.swing.JOptionPane;
 import lecturer.LecturerDashboard;
 
@@ -24,7 +25,7 @@ public class TechnicalOfficerProfile extends javax.swing.JFrame {
     }
 
     private void init() {
-
+        setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 20, 20));
         techID = user.getUserId(TechnicalOfficerDashboard.emailadress.getText());
         value = user.getUserValue(techID);
         setValue();

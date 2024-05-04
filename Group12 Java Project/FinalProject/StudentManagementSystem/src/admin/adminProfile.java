@@ -6,7 +6,9 @@ package admin;
 
 import javax.swing.JOptionPane;
 import Dao.UserDao;
+import java.awt.geom.RoundRectangle2D;
 import lecturer.LecturerDashboard;
+
 /**
  *
  * @author imalkesara
@@ -16,19 +18,20 @@ public class adminProfile extends javax.swing.JFrame {
     UserDao user = new UserDao();
     private String adminID;
     String[] value = new String[8];
-    
+
     public adminProfile() {
         initComponents();
         init();
     }
-    
-    private void init() {
 
+    private void init() {
+        setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 20, 20));
         adminID = user.getUserId(AdminDashboard.emailadress.getText());
         value = user.getUserValue(adminID);
         setValue();
 
     }
+
     private void setValue() {
 
         lectextField.setText(value[2]);

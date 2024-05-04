@@ -5,6 +5,7 @@
 package lecturer;
 
 import Dao.UserDao;
+import java.awt.geom.RoundRectangle2D;
 import javax.swing.JOptionPane;
 
 public class LecProfile extends javax.swing.JFrame {
@@ -23,6 +24,7 @@ public class LecProfile extends javax.swing.JFrame {
     }
 
     private void init() {
+        setShape(new RoundRectangle2D.Double(0,0,getWidth(),getHeight(),20,20));
 
         LecID = user.getUserId(LecturerDashboard.emailadressLEC.getText());
         value = user.getUserValue(LecID);

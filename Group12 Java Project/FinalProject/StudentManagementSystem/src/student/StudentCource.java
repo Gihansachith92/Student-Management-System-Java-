@@ -6,6 +6,7 @@ package student;
 
 import lecturer.*;
 import java.awt.Color;
+import java.awt.geom.RoundRectangle2D;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -29,6 +30,7 @@ public class StudentCource extends javax.swing.JFrame {
     }
 
     public void init() {
+         setShape(new RoundRectangle2D.Double(0,0,getWidth(),getHeight(),20,20));
         tableviewLecturer();
     }
 

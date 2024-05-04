@@ -4,6 +4,7 @@
  */
 package student;
 
+import java.awt.geom.RoundRectangle2D;
 import lecturer.LecturerDashboard;
 import student.StudentDashboard;
 
@@ -21,15 +22,14 @@ public class MyAttendance extends javax.swing.JFrame {
     String[] value04 = new String[5];
     String[] value05 = new String[5];
     String[] value06 = new String[5];
-    
-    
+
     public MyAttendance() {
         initComponents();
         init();
     }
-    
-    private void init() {
 
+    private void init() {
+        setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 20, 20));
         StuID = myattendance.getUserId(StudentDashboard.emailadressSTU.getText());
         value01 = myattendance.getAttendaceValue01(StuID);
         value02 = myattendance.getAttendaceValue02(StuID);
@@ -40,6 +40,7 @@ public class MyAttendance extends javax.swing.JFrame {
         setValue();
 
     }
+
     private void setValue() {
 
         jLabel33.setText(value01[3]);
@@ -53,7 +54,6 @@ public class MyAttendance extends javax.swing.JFrame {
 //        lectextFieldddd.setText(value[5]);
 //        lectextFieldddd1.setText(value[7]);
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.

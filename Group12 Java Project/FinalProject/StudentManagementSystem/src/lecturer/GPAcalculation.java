@@ -9,6 +9,7 @@ package lecturer;
  * @author imalkesara
  */
 import java.awt.Color;
+import java.awt.geom.RoundRectangle2D;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,6 +25,7 @@ public class GPAcalculation extends javax.swing.JFrame {
 
     public void init() {
         tableviewStudentGPA();
+        setShape(new RoundRectangle2D.Double(0,0,getWidth(),getHeight(),20,20));
     }
 
     private void tableviewStudentGPA() {

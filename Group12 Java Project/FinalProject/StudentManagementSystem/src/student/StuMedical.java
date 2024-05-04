@@ -6,6 +6,7 @@ package student;
 
 import connection.Myconnection;
 import java.awt.Color;
+import java.awt.geom.RoundRectangle2D;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -33,6 +34,7 @@ public class StuMedical extends javax.swing.JFrame {
         init();
     }
     private void init() {
+         setShape(new RoundRectangle2D.Double(0,0,getWidth(),getHeight(),20,20));
 
         MID = stuuMedical.getUserId(StudentDashboard.emailadressSTU.getText());
         tableviewGPAMARKSdetails(MID);

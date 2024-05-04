@@ -5,6 +5,7 @@
 package lecturer;
 
 import java.awt.Color;
+import java.awt.geom.RoundRectangle2D;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -14,30 +15,28 @@ import javax.swing.table.DefaultTableModel;
  */
 public class StudentDetails extends javax.swing.JFrame {
 
-    Studentdetails studentdetails =  new Studentdetails();
+    Studentdetails studentdetails = new Studentdetails();
     private DefaultTableModel model;
-    
+
     public StudentDetails() {
         initComponents();
         init();
     }
-    
-    public void init(){
-       tableviewStudentdetails();
+
+    public void init() {
+        setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 20, 20));
+        tableviewStudentdetails();
     }
-    
-    private void tableviewStudentdetails(){
+
+    private void tableviewStudentdetails() {
         studentdetails.getStudentDetails(Studentdetialstable, "");
-        model  =(DefaultTableModel) Studentdetialstable.getModel();
+        model = (DefaultTableModel) Studentdetialstable.getModel();
         Studentdetialstable.setRowHeight(30);
         Studentdetialstable.setShowGrid(false);
         Studentdetialstable.setGridColor(Color.black);
         Studentdetialstable.setBackground(Color.white);
-        
+
     }
-    
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -197,25 +196,25 @@ public class StudentDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void StudentdetialstableKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_StudentdetialstableKeyPressed
-        
+
     }//GEN-LAST:event_StudentdetialstableKeyPressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(SearchStudentDetails.getText().isEmpty()){
+        if (SearchStudentDetails.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please enter a corsecode");
-        }else{
+        } else {
             Studentdetialstable.setModel(new DefaultTableModel(null, new Object[]{"Student ID", "Student Name", "Phone Number", "Email", "Gender"}));
-            studentdetails.getStudentDetails(Studentdetialstable,SearchStudentDetails.getText());
-            
+            studentdetails.getStudentDetails(Studentdetialstable, SearchStudentDetails.getText());
+
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       if(SearchStudentDetails.getText().isEmpty()){
+        if (SearchStudentDetails.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please enter a corsecode");
-        }else{
+        } else {
             Studentdetialstable.setModel(new DefaultTableModel(null, new Object[]{"Student ID", "Student Name", "Phone Number", "Email", "Gender"}));
-            studentdetails.getStudentDetails(Studentdetialstable,"");
+            studentdetails.getStudentDetails(Studentdetialstable, "");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

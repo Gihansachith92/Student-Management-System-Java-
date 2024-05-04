@@ -5,6 +5,7 @@
 package technicalofficer;
 
 import connection.Myconnection;
+import java.awt.geom.RoundRectangle2D;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -26,6 +27,7 @@ public class Medical extends javax.swing.JFrame {
      */
     public Medical() {
         initComponents();
+         setShape(new RoundRectangle2D.Double(0,0,getWidth(),getHeight(),20,20));
         displayMedicalDetails();
     }
     

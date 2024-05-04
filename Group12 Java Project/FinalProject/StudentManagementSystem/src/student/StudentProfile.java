@@ -5,6 +5,7 @@
 package student;
 
 import Dao.UserDao;
+import java.awt.geom.RoundRectangle2D;
 import javax.swing.JOptionPane;
 import lecturer.LecturerDashboard;
 import student.StudentDashboard;
@@ -23,15 +24,15 @@ public class StudentProfile extends javax.swing.JFrame {
         initComponents();
         init();
     }
-    
-    private void init() {
 
+    private void init() {
+        setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 20, 20));
         StuID = user.getUserId(StudentDashboard.emailadressSTU.getText());
         value = user.getUserValue(StuID);
         setValue();
 
     }
-    
+
     private void setValue() {
 
         lectextField.setText(value[2]);
