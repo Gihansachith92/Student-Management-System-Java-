@@ -1,6 +1,9 @@
 # Student Management System (SMS) - Java
   Welcome to the Student Management System (SMS) repository! This project aims to develop a comprehensive and efficient system for managing student data within a university environment, implemented in Java.
 
+  ![WhatsApp Image 2024-05-01 at 22 40 33_ae8fd596](https://github.com/Gihansachith92/Student-Management-System-Java-/assets/110083916/4bcf83ac-e43e-41e9-8f50-03ac2e00c9c4)
+
+
 ## Overview
   The Student Management System provides functionalities to handle student information, course enrollment, grading, and administrative tasks efficiently. It offers a user-friendly interface for both 
   administrators and students, facilitating smooth interaction and management of academic data.
