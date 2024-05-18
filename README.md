@@ -16,5 +16,5 @@
 
 ## Technologies Used
  #### Java: Core programming language for system development.
- #### JavaFX: GUI framework for building interactive user interfaces.
+ #### Java Swing: GUI framework for building interactive user interfaces.
  #### MySQL: Database management system for storing and managing data
